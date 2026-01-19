@@ -1,6 +1,69 @@
 ﻿{
     "adjacency":  {
+                      "6 deletions":  {
+                                          "out":  [
 
+                                                  ],
+                                          "in":  [
+                                                     1
+                                                 ]
+                                      },
+                      "0 deletions":  {
+                                          "out":  [
+
+                                                  ],
+                                          "in":  [
+                                                     2
+                                                 ]
+                                      },
+                      "15 deletions":  {
+                                           "out":  [
+
+                                                   ],
+                                           "in":  [
+                                                      0
+                                                  ]
+                                       },
+                      "6 additions":  {
+                                          "out":  [
+                                                      1
+                                                  ],
+                                          "in":  [
+
+                                                 ]
+                                      },
+                      "progress.json":  {
+                                            "out":  [
+
+                                                    ],
+                                            "in":  [
+                                                       3
+                                                   ]
+                                        },
+                      "95 additions":  {
+                                           "out":  [
+                                                       0
+                                                   ],
+                                           "in":  [
+
+                                                  ]
+                                       },
+                      "data/runs/*.jsonl":  {
+                                                "out":  [
+                                                            3
+                                                        ],
+                                                "in":  [
+
+                                                       ]
+                                            },
+                      "1 addition":  {
+                                         "out":  [
+                                                     2
+                                                 ],
+                                         "in":  [
+
+                                                ]
+                                     }
                   },
     "validation_queue":  [
 
@@ -9,18 +72,57 @@
     "project_root":  "C:/Users/jpswi/personal projects/RE3-standalone",
     "sessions":  {
                      "94922ce9-159d-486f-b0b5-7597154aacbf":  {
-                                                                  "last_turn":  1,
-                                                                  "last_active":  "2026-01-18T20:17:30.2502719-08:00",
+                                                                  "last_turn":  2,
+                                                                  "last_active":  "2026-01-18T20:19:16.7589502-08:00",
                                                                   "last_dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone"
                                                               }
                  },
     "metadata":  {
-                     "last_turn":  1,
+                     "last_turn":  2,
                      "cycles_found":  0,
-                     "total_connected":  0,
-                     "total_orphans":  0
+                     "total_connected":  1,
+                     "total_orphans":  3
                  },
     "edges":  [
-
+                  {
+                      "turn":  2,
+                      "timestamp":  "2026-01-18T20:19:16.7589502-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "double",
+                      "sub":  "95 additions",
+                      "obj":  "15 deletions",
+                      "pred":  "is",
+                      "session":  "94922ce9-159d-486f-b0b5-7597154aacbf"
+                  },
+                  {
+                      "turn":  2,
+                      "timestamp":  "2026-01-18T20:19:16.7589502-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "double",
+                      "sub":  "6 additions",
+                      "obj":  "6 deletions",
+                      "pred":  "is",
+                      "session":  "94922ce9-159d-486f-b0b5-7597154aacbf"
+                  },
+                  {
+                      "turn":  2,
+                      "timestamp":  "2026-01-18T20:19:16.7589502-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "double",
+                      "sub":  "1 addition",
+                      "obj":  "0 deletions",
+                      "pred":  "is",
+                      "session":  "94922ce9-159d-486f-b0b5-7597154aacbf"
+                  },
+                  {
+                      "turn":  2,
+                      "timestamp":  "2026-01-18T20:19:16.7589502-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "data/runs/*.jsonl",
+                      "obj":  "progress.json",
+                      "pred":  "data/summaries/*.csv",
+                      "session":  "94922ce9-159d-486f-b0b5-7597154aacbf"
+                  }
               ]
 }
