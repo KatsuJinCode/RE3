@@ -1,2 +1,0 @@
-config_id,pattern,b_strategy,benchmark,n_total,n_correct,n_error,accuracy,accuracy_95ci_low,accuracy_95ci_high,avg_latency_ms,avg_tokens_input,avg_tokens_output
-C09,ABA,b4a_delimiter_swap,mmlu,50,0,50,0.0,0.0,0.0,0,0,0

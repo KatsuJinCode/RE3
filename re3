@@ -1,0 +1,135 @@
+#!/usr/bin/env bash
+# RE3 CLI - Simple commands for RE3 experiment collaboration
+# Usage: ./re3 <command>
+
+set -e
+REPO="KatsuJinCode/RE3"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+show_help() {
+    echo "RE3 - Collaborative LLM Testing"
+    echo ""
+    echo "Commands:"
+    echo "  run         Run one experiment slice"
+    echo "  run-all     Run until all slices complete"
+    echo "  status      Show experiment progress"
+    echo "  request     Request collaborator access"
+    echo "  approve     (Owner only) Approve a collaborator"
+    echo ""
+    echo "Setup:"
+    echo "  setup       Install dependencies"
+    echo "  check       Check if everything is ready"
+}
+
+cmd_run() {
+    cd "$SCRIPT_DIR"
+    python bootstrap.py run
+}
+
+cmd_run_all() {
+    cd "$SCRIPT_DIR"
+    python bootstrap.py run-all
+}
+
+cmd_status() {
+    cd "$SCRIPT_DIR"
+    python bootstrap.py status
+    echo ""
+    python harness/progress.py status 2>/dev/null || true
+}
+
+cmd_setup() {
+    cd "$SCRIPT_DIR"
+    python bootstrap.py setup
+}
+
+cmd_check() {
+    cd "$SCRIPT_DIR"
+    python bootstrap.py status
+}
+
+cmd_request() {
+    echo "=== Request Collaborator Access ==="
+    echo ""
+
+    # Get GitHub username
+    GH_USER=$(gh api user --jq '.login' 2>/dev/null || echo "")
+    if [ -z "$GH_USER" ]; then
+        echo "Error: Not logged into GitHub CLI (gh)."
+        echo "Run: gh auth login"
+        exit 1
+    fi
+
+    echo "Your GitHub username: $GH_USER"
+    echo ""
+    echo "This will create an issue requesting collaborator access."
+    read -p "Continue? [y/N] " -n 1 -r
+    echo ""
+
+    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+        echo "Cancelled."
+        exit 0
+    fi
+
+    # Create issue
+    ISSUE_TITLE="Collaborator Request: $GH_USER"
+    ISSUE_BODY="**Username:** $GH_USER
+
+I'd like to help run RE3 experiments.
+
+**My setup:**
+- OS: $(uname -s 2>/dev/null || echo "Windows")
+- Has LM Studio: (please confirm)
+- Available GPU: (please describe)
+
+---
+*To approve, repo owner runs:* \`./re3 approve $GH_USER\`"
+
+    gh issue create --repo "$REPO" --title "$ISSUE_TITLE" --body "$ISSUE_BODY"
+
+    echo ""
+    echo "Request submitted! The repo owner will be notified."
+    echo "Once approved, you can run: ./re3 run"
+}
+
+cmd_approve() {
+    if [ -z "$1" ]; then
+        echo "Usage: ./re3 approve <github-username>"
+        echo ""
+        echo "Pending requests:"
+        gh issue list --repo "$REPO" --search "Collaborator Request" --state open
+        exit 1
+    fi
+
+    USERNAME="$1"
+    echo "Adding $USERNAME as collaborator to $REPO..."
+
+    gh api --method PUT "repos/$REPO/collaborators/$USERNAME" -f permission=push
+
+    echo "Done! $USERNAME can now push to the repo."
+    echo ""
+    echo "Closing related issues..."
+
+    # Close the request issue
+    ISSUE_NUM=$(gh issue list --repo "$REPO" --search "Collaborator Request: $USERNAME" --state open --json number --jq '.[0].number' 2>/dev/null || echo "")
+    if [ -n "$ISSUE_NUM" ]; then
+        gh issue close "$ISSUE_NUM" --repo "$REPO" --comment "Approved! Welcome to RE3."
+    fi
+}
+
+# Main dispatch
+case "${1:-help}" in
+    run)      cmd_run ;;
+    run-all)  cmd_run_all ;;
+    status)   cmd_status ;;
+    setup)    cmd_setup ;;
+    check)    cmd_check ;;
+    request)  cmd_request ;;
+    approve)  cmd_approve "$2" ;;
+    help|--help|-h) show_help ;;
+    *)
+        echo "Unknown command: $1"
+        echo "Run './re3 help' for usage."
+        exit 1
+        ;;
+esac

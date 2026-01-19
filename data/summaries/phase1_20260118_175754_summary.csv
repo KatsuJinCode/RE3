@@ -1,2 +1,2 @@
 config_id,pattern,b_strategy,benchmark,n_total,n_correct,n_error,accuracy,accuracy_95ci_low,accuracy_95ci_high,avg_latency_ms,avg_tokens_input,avg_tokens_output
-C13,BBA,b4a_delimiter_swap,gsm8k,50,0,50,0.0,0.0,0.0,0,0,0
+C04,AB,b1a_camelcase_pairs,gsm8k,50,41,3,0.8723,0.7483,0.9402,13098.6,161.7,168.0
