@@ -625,13 +625,19 @@
       "config_id": "C04",
       "strategy": "b1a_camelcase_pairs",
       "benchmark": "mmlu",
-      "status": "running",
+      "status": "completed",
       "claimed_by": "jpswi@Jace",
       "claimed_at": "2026-01-19T01:41:54.358497+00:00",
       "started_at": "2026-01-19T01:41:54.367496+00:00",
-      "completed_at": null,
-      "results_file": null,
-      "stats": null,
+      "completed_at": "2026-01-19T01:42:13.809801+00:00",
+      "results_file": "data\\runs\\phase1_20260118_174206.jsonl",
+      "stats": {
+        "total": 50,
+        "correct": 0,
+        "errors": 50,
+        "accuracy": 0,
+        "mean_latency_ms": 0
+      },
       "error": null
     },
     "C04_b1a_camelcase_pairs_hellaswag": {
@@ -5491,9 +5497,9 @@
   },
   "workers": {
     "jpswi@Jace": {
-      "last_seen": "2026-01-19T01:41:54.367496+00:00"
+      "last_seen": "2026-01-19T01:42:13.809801+00:00"
     }
   },
   "created_at": "2026-01-18T19:08:04.152462+00:00",
-  "last_updated": "2026-01-19T01:41:54.367496+00:00"
+  "last_updated": "2026-01-19T01:42:13.809801+00:00"
 }
