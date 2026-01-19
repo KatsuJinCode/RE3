@@ -641,6 +641,11 @@ def run_batched_tests(configs: List[Config],
             break
 
         job = result.context
+
+        # SANITY CHECK: 0ms latency means harness failure, not a real result
+        if result.latency_ms == 0 or (result.latency_ms < 50 and result.error):
+            result.error = f"Invalid result (latency={result.latency_ms}ms): {result.error or 'instant failure'}"
+
         success = record_batch_result(job, result, recorder)
 
         completed += 1
@@ -696,6 +701,19 @@ def run_batched_tests(configs: List[Config],
     print(f"  Duration: {format_time(elapsed)}")
     print(f"  Avg time: {avg_latency:.0f}ms per test")
     print("=" * 70)
+
+    # SANITY CHECK: Detect catastrophic failure (all instant errors)
+    if completed > 0 and error_count == completed and avg_latency < 100:
+        print()
+        print("!" * 70)
+        print("  SANITY CHECK FAILED - RUN INVALIDATED")
+        print("!" * 70)
+        print("  All tests failed instantly (<100ms avg latency, 100% errors).")
+        print("  This indicates a harness/connection problem, not test results.")
+        print("  Data has been cleared. Fix the issue and retry.")
+        print("!" * 70)
+        recorder.records.clear()
+        raise RuntimeError("Sanity check failed: all tests failed instantly")
 
 
 def run_smoke_test(data_dir: Path) -> bool:
