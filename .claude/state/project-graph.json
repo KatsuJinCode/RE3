@@ -1,69 +1,85 @@
 ﻿{
     "adjacency":  {
                       "6 deletions":  {
-                                          "out":  [
-
-                                                  ],
                                           "in":  [
                                                      1
-                                                 ]
+                                                 ],
+                                          "out":  [
+
+                                                  ]
                                       },
                       "0 deletions":  {
-                                          "out":  [
-
-                                                  ],
                                           "in":  [
-                                                     2
-                                                 ]
-                                      },
-                      "15 deletions":  {
-                                           "out":  [
-
-                                                   ],
-                                           "in":  [
-                                                      0
-                                                  ]
-                                       },
-                      "6 additions":  {
-                                          "out":  [
-                                                      1
-                                                  ],
-                                          "in":  [
-
-                                                 ]
-                                      },
-                      "progress.json":  {
-                                            "out":  [
-
-                                                    ],
-                                            "in":  [
-                                                       3
-                                                   ]
-                                        },
-                      "95 additions":  {
-                                           "out":  [
-                                                       0
-                                                   ],
-                                           "in":  [
-
-                                                  ]
-                                       },
-                      "data/runs/*.jsonl":  {
-                                                "out":  [
-                                                            3
-                                                        ],
-                                                "in":  [
-
-                                                       ]
-                                            },
-                      "1 addition":  {
-                                         "out":  [
                                                      2
                                                  ],
+                                          "out":  [
+
+                                                  ]
+                                      },
+                      "not modifications to existing":  {
+                                                            "out":  [
+
+                                                                    ],
+                                                            "in":  [
+                                                                       4
+                                                                   ]
+                                                        },
+                      "15 deletions":  {
+                                           "in":  [
+                                                      0
+                                                  ],
+                                           "out":  [
+
+                                                   ]
+                                       },
+                      "6 additions":  {
+                                          "in":  [
+
+                                                 ],
+                                          "out":  [
+                                                      1
+                                                  ]
+                                      },
+                      "progress.json":  {
+                                            "in":  [
+                                                       3
+                                                   ],
+                                            "out":  [
+
+                                                    ]
+                                        },
+                      "1 addition":  {
                                          "in":  [
 
-                                                ]
-                                     }
+                                                ],
+                                         "out":  [
+                                                     2
+                                                 ]
+                                     },
+                      "95 additions":  {
+                                           "in":  [
+
+                                                  ],
+                                           "out":  [
+                                                       0
+                                                   ]
+                                       },
+                      "new files":  {
+                                        "out":  [
+                                                    4
+                                                ],
+                                        "in":  [
+
+                                               ]
+                                    },
+                      "data/runs/*.jsonl":  {
+                                                "in":  [
+
+                                                       ],
+                                                "out":  [
+                                                            3
+                                                        ]
+                                            }
                   },
     "validation_queue":  [
 
@@ -72,13 +88,13 @@
     "project_root":  "C:/Users/jpswi/personal projects/RE3-standalone",
     "sessions":  {
                      "94922ce9-159d-486f-b0b5-7597154aacbf":  {
-                                                                  "last_turn":  2,
-                                                                  "last_active":  "2026-01-18T20:19:16.7589502-08:00",
+                                                                  "last_turn":  3,
+                                                                  "last_active":  "2026-01-18T20:22:17.0859388-08:00",
                                                                   "last_dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone"
                                                               }
                  },
     "metadata":  {
-                     "last_turn":  2,
+                     "last_turn":  3,
                      "cycles_found":  0,
                      "total_connected":  1,
                      "total_orphans":  3
@@ -122,6 +138,16 @@
                       "sub":  "data/runs/*.jsonl",
                       "obj":  "progress.json",
                       "pred":  "data/summaries/*.csv",
+                      "session":  "94922ce9-159d-486f-b0b5-7597154aacbf"
+                  },
+                  {
+                      "turn":  3,
+                      "timestamp":  "2026-01-18T20:22:17.0859388-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "double",
+                      "sub":  "new files",
+                      "obj":  "not modifications to existing",
+                      "pred":  "is",
                       "session":  "94922ce9-159d-486f-b0b5-7597154aacbf"
                   }
               ]
