@@ -1,29 +1,29 @@
 ﻿{
     "adjacency":  {
-                      "6 deletions":  {
-                                          "in":  [
-                                                     1
-                                                 ],
-                                          "out":  [
+                      "data/runs/*.jsonl":  {
+                                                "in":  [
 
-                                                  ]
-                                      },
-                      "0 deletions":  {
-                                          "in":  [
-                                                     2
-                                                 ],
-                                          "out":  [
+                                                       ],
+                                                "out":  [
+                                                            3
+                                                        ]
+                                            },
+                      "new files":  {
+                                        "in":  [
 
-                                                  ]
-                                      },
-                      "not modifications to existing":  {
-                                                            "out":  [
+                                               ],
+                                        "out":  [
+                                                    4
+                                                ]
+                                    },
+                      "2":  {
+                                "out":  [
+                                            7
+                                        ],
+                                "in":  [
 
-                                                                    ],
-                                                            "in":  [
-                                                                       4
-                                                                   ]
-                                                        },
+                                       ]
+                            },
                       "15 deletions":  {
                                            "in":  [
                                                       0
@@ -32,22 +32,6 @@
 
                                                    ]
                                        },
-                      "6 additions":  {
-                                          "in":  [
-
-                                                 ],
-                                          "out":  [
-                                                      1
-                                                  ]
-                                      },
-                      "progress.json":  {
-                                            "in":  [
-                                                       3
-                                                   ],
-                                            "out":  [
-
-                                                    ]
-                                        },
                       "1 addition":  {
                                          "in":  [
 
@@ -56,6 +40,14 @@
                                                      2
                                                  ]
                                      },
+                      "6 deletions":  {
+                                          "in":  [
+                                                     1
+                                                 ],
+                                          "out":  [
+
+                                                  ]
+                                      },
                       "95 additions":  {
                                            "in":  [
 
@@ -64,22 +56,71 @@
                                                        0
                                                    ]
                                        },
-                      "new files":  {
-                                        "out":  [
-                                                    4
-                                                ],
-                                        "in":  [
+                      "not modifications to existing":  {
+                                                            "in":  [
+                                                                       4
+                                                                   ],
+                                                            "out":  [
 
-                                               ]
-                                    },
-                      "data/runs/*.jsonl":  {
-                                                "in":  [
+                                                                    ]
+                                                        },
+                      "all data files":  {
+                                             "out":  [
+                                                         6
+                                                     ],
+                                             "in":  [
 
-                                                       ],
-                                                "out":  [
-                                                            3
-                                                        ]
-                                            }
+                                                    ]
+                                         },
+                      "progress.json":  {
+                                            "out":  [
+
+                                                    ],
+                                            "in":  [
+                                                       3,
+                                                       5
+                                                   ]
+                                        },
+                      "data/runs/":  {
+                                         "out":  [
+                                                     5
+                                                 ],
+                                         "in":  [
+
+                                                ]
+                                     },
+                      "6":  {
+                                "out":  [
+
+                                        ],
+                                "in":  [
+                                           7
+                                       ]
+                            },
+                      "0 deletions":  {
+                                          "in":  [
+                                                     2
+                                                 ],
+                                          "out":  [
+
+                                                  ]
+                                      },
+                      "no harness code":  {
+                                              "out":  [
+
+                                                      ],
+                                              "in":  [
+                                                         6
+                                                     ]
+                                          },
+                      "6 additions":  {
+                                          "in":  [
+
+                                                 ],
+                                          "out":  [
+                                                      1
+                                                  ]
+                                      }
                   },
     "validation_queue":  [
 
@@ -88,16 +129,16 @@
     "project_root":  "C:/Users/jpswi/personal projects/RE3-standalone",
     "sessions":  {
                      "94922ce9-159d-486f-b0b5-7597154aacbf":  {
-                                                                  "last_turn":  3,
-                                                                  "last_active":  "2026-01-18T20:22:17.0859388-08:00",
+                                                                  "last_turn":  4,
+                                                                  "last_active":  "2026-01-18T20:26:37.6271053-08:00",
                                                                   "last_dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone"
                                                               }
                  },
     "metadata":  {
-                     "last_turn":  3,
+                     "last_turn":  4,
                      "cycles_found":  0,
-                     "total_connected":  1,
-                     "total_orphans":  3
+                     "total_connected":  2,
+                     "total_orphans":  5
                  },
     "edges":  [
                   {
@@ -148,6 +189,36 @@
                       "sub":  "new files",
                       "obj":  "not modifications to existing",
                       "pred":  "is",
+                      "session":  "94922ce9-159d-486f-b0b5-7597154aacbf"
+                  },
+                  {
+                      "turn":  4,
+                      "timestamp":  "2026-01-18T20:26:37.6271053-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "data/runs/",
+                      "obj":  "progress.json",
+                      "pred":  "data/summaries/",
+                      "session":  "94922ce9-159d-486f-b0b5-7597154aacbf"
+                  },
+                  {
+                      "turn":  4,
+                      "timestamp":  "2026-01-18T20:26:37.6271053-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "double",
+                      "sub":  "all data files",
+                      "obj":  "no harness code",
+                      "pred":  "is",
+                      "session":  "94922ce9-159d-486f-b0b5-7597154aacbf"
+                  },
+                  {
+                      "turn":  4,
+                      "timestamp":  "2026-01-18T20:26:37.6271053-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "2",
+                      "obj":  "6",
+                      "pred":  "4",
                       "session":  "94922ce9-159d-486f-b0b5-7597154aacbf"
                   }
               ]
