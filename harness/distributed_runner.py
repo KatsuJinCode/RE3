@@ -174,13 +174,13 @@ def create_pr_via_fork(message: str) -> bool:
         # Create PR
         print(f"  Creating Pull Request...")
         pr_result = subprocess.run(
-            ['gh', 'pr', 'create',
-             '--repo', upstream_repo,
-             '--head', f"{username}:{branch_name}",
-             '--title', message,
-             '--body', f"Automated contribution from {username}
+             ['gh', 'pr', 'create',
+              '--repo', upstream_repo,
+              '--head', f"{username}:{branch_name}",
+              '--title', message,
+              '--body', f"""Automated contribution from {username}
 
-Run results from RE3 distributed testing."],
+Run results from RE3 distributed testing."""],
             capture_output=True, text=True, timeout=30
         )
 
