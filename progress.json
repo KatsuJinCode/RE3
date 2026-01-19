@@ -2561,19 +2561,13 @@
       "config_id": "C08",
       "strategy": "b4a_delimiter_swap",
       "benchmark": "gsm8k",
-      "status": "completed",
-      "claimed_by": "Paul@DESKTOP-5FT8NGT",
-      "claimed_at": "2026-01-19T03:58:05.017681+00:00",
-      "started_at": "2026-01-19T03:58:05.029713+00:00",
-      "completed_at": "2026-01-19T04:03:58.881640+00:00",
-      "results_file": "data\\runs\\phase1_20260118_225810.jsonl",
-      "stats": {
-        "total": 50,
-        "correct": 44,
-        "errors": 0,
-        "accuracy": 0.88,
-        "mean_latency_ms": 26897
-      },
+      "status": "pending",
+      "claimed_by": null,
+      "claimed_at": null,
+      "started_at": null,
+      "completed_at": null,
+      "results_file": null,
+      "stats": null,
       "error": null
     },
     "C08_b4a_delimiter_swap_mmlu": {
@@ -5560,9 +5554,9 @@
       "last_seen": "2026-01-19T01:57:54.172006+00:00"
     },
     "Paul@DESKTOP-5FT8NGT": {
-      "last_seen": "2026-01-19T04:03:58.881650+00:00"
+      "last_seen": "2026-01-19T03:57:58.192199+00:00"
     }
   },
   "created_at": "2026-01-18T19:08:04.152462+00:00",
-  "last_updated": "2026-01-19T04:03:58.881647+00:00"
+  "last_updated": "2026-01-19T03:57:58.192197+00:00"
 }
