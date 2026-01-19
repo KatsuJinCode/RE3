@@ -1,0 +1,2 @@
+config_id,pattern,b_strategy,benchmark,n_total,n_correct,n_error,accuracy,accuracy_95ci_low,accuracy_95ci_high,avg_latency_ms,avg_tokens_input,avg_tokens_output
+C09,ABA,b4a_delimiter_swap,hellaswag,50,24,0,0.48,0.348,0.6149,4223.7,368.5,1

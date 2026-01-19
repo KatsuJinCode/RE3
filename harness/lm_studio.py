@@ -134,6 +134,7 @@ def send_prompt(prompt: str,
 
     # Build request
     payload = {
+        "model": check_lm_studio().get("model_loaded") or "",
         "messages": messages,
         "temperature": temperature,
         "max_tokens": max_tokens,
