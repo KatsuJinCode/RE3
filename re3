@@ -118,6 +118,107 @@ cmd_approve() {
     fi
 }
 
+cmd_pull_data() {
+    if [ -z "$1" ]; then
+        echo "Usage: ./re3 pull-data <PR_NUMBER>"
+        echo ""
+        echo "Open PRs with data:"
+        gh pr list --repo "$REPO" --search "Complete" --state open
+        exit 1
+    fi
+
+    PR_NUM="$1"
+    echo "=== Pull Data from PR #$PR_NUM ==="
+
+    cd "$SCRIPT_DIR"
+
+    # Get PR info
+    PR_INFO=$(gh pr view "$PR_NUM" --repo "$REPO" --json headRefName,headRepository,headRepositoryOwner,title 2>/dev/null)
+    if [ -z "$PR_INFO" ]; then
+        echo "Error: Could not fetch PR #$PR_NUM"
+        exit 1
+    fi
+
+    PR_TITLE=$(echo "$PR_INFO" | jq -r '.title')
+    HEAD_REF=$(echo "$PR_INFO" | jq -r '.headRefName')
+    HEAD_OWNER=$(echo "$PR_INFO" | jq -r '.headRepositoryOwner.login')
+    HEAD_REPO=$(echo "$PR_INFO" | jq -r '.headRepository.name')
+
+    echo "PR: $PR_TITLE"
+    echo "From: $HEAD_OWNER/$HEAD_REPO @ $HEAD_REF"
+    echo ""
+
+    # Add remote if needed
+    REMOTE_NAME="contrib-$HEAD_OWNER"
+    if ! git remote get-url "$REMOTE_NAME" &>/dev/null; then
+        echo "Adding remote $REMOTE_NAME..."
+        git remote add "$REMOTE_NAME" "https://github.com/$HEAD_OWNER/$HEAD_REPO.git"
+    fi
+
+    # Fetch the branch
+    echo "Fetching $HEAD_REF..."
+    git fetch "$REMOTE_NAME" "$HEAD_REF"
+
+    # Checkout only data files
+    echo "Extracting data files..."
+    git checkout "$REMOTE_NAME/$HEAD_REF" -- data/runs/ 2>/dev/null || true
+    git checkout "$REMOTE_NAME/$HEAD_REF" -- data/summaries/ 2>/dev/null || true
+    git checkout "$REMOTE_NAME/$HEAD_REF" -- progress.json 2>/dev/null || true
+
+    # Check if anything changed
+    if git diff --quiet && ! git diff --cached --quiet; then
+        : # staged changes exist, continue
+    elif git diff --quiet && git diff --cached --quiet; then
+        echo "No new data files to pull."
+        exit 0
+    fi
+
+    # Validate JSONL files (basic check)
+    echo "Validating data..."
+    INVALID=0
+    for f in $(git diff --name-only HEAD | grep '\.jsonl$' || true); do
+        if [ -f "$f" ]; then
+            if ! python -c "
+import sys, json
+with open('$f') as fh:
+    for i, line in enumerate(fh, 1):
+        if line.strip():
+            try:
+                json.loads(line)
+            except json.JSONDecodeError as e:
+                print(f'  Line {i}: {e}')
+                sys.exit(1)
+" 2>/dev/null; then
+                echo "  Invalid JSON in $f"
+                INVALID=1
+            fi
+        fi
+    done
+
+    if [ "$INVALID" -eq 1 ]; then
+        echo "Validation failed. Aborting."
+        git checkout HEAD -- data/ progress.json
+        exit 1
+    fi
+    echo "  OK"
+
+    # Stage and commit
+    git add data/runs/ data/summaries/ progress.json
+    git commit -m "Data from PR #$PR_NUM: $PR_TITLE"
+
+    echo ""
+    echo "Data merged successfully!"
+    echo ""
+
+    # Comment and close PR
+    read -p "Close PR #$PR_NUM? [Y/n] " -n 1 -r
+    echo ""
+    if [[ ! $REPLY =~ ^[Nn]$ ]]; then
+        gh pr close "$PR_NUM" --repo "$REPO" --comment "Data merged via \`re3 pull-data\`. Thank you!"
+        echo "PR closed."
+    fi
+}
+
 # Main dispatch
 case "${1:-help}" in
     run)      cmd_run ;;
