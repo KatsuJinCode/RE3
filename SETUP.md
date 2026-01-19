@@ -3,8 +3,10 @@
 ## Quick Start
 
 ```bash
+git clone https://github.com/KatsuJinCode/RE3.git
+cd RE3
 ./re3 setup    # Install dependencies
-./re3 run      # Start running experiment
+./re3 run      # Run experiments
 ```
 
 On Windows: use `re3` instead of `./re3`
@@ -13,7 +15,6 @@ On Windows: use `re3` instead of `./re3`
 
 - **Python 3.8+**
 - **LM Studio** with a model loaded
-- **GitHub CLI** (`gh`) - for collaboration features
 
 ### LM Studio Setup
 
@@ -30,35 +31,30 @@ On Windows: use `re3` instead of `./re3`
 | `./re3 run-all` | Run until all slices complete |
 | `./re3 status` | Check experiment progress |
 | `./re3 setup` | Install Python dependencies |
-| `./re3 check` | Verify setup is ready |
 
-## Collaboration
+## Contributing Results
 
-### Requesting Access
-
-If you want to contribute test runs:
+Anyone can clone and run experiments locally. To **contribute your results back** to the shared dataset:
 
 ```bash
-./re3 request
+./re3 request    # Request push access (creates GitHub issue)
 ```
 
-This creates a GitHub issue requesting collaborator access. The repo owner will approve you.
+Once approved, your results automatically sync to the shared repo.
 
-### For Repo Owner - Approving Collaborators
+### For Repo Owner
 
 ```bash
-./re3 approve <username>
+./re3 approve <username>    # Grant push access
 ```
-
-This adds the user as a collaborator so they can push results.
 
 ## How It Works
 
-Multiple people can run simultaneously. Git handles coordination:
+Multiple people can run simultaneously. Git coordinates:
 
-1. **Pull** latest progress
-2. **Claim** a random available slice (push to lock it)
-3. **Run** the tests
-4. **Push** results when done
+1. Pull latest progress
+2. Claim a random available slice
+3. Run tests (50 per slice)
+4. Push results
 
-Each slice is 50 tests of one config/strategy/benchmark combination.
+Each slice is one config/strategy/benchmark combination.
