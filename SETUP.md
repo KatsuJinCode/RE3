@@ -1,16 +1,19 @@
 # RE3 Setup
 
-## Quick Start (2 commands)
+## Quick Start
 
 ```bash
-python bootstrap.py setup    # Install dependencies
-python bootstrap.py run      # Start running experiment
+./re3 setup    # Install dependencies
+./re3 run      # Start running experiment
 ```
+
+On Windows: use `re3` instead of `./re3`
 
 ## Prerequisites
 
-- **Python 3.8+** (you probably have this)
+- **Python 3.8+**
 - **LM Studio** with a model loaded
+- **GitHub CLI** (`gh`) - for collaboration features
 
 ### LM Studio Setup
 
@@ -19,37 +22,43 @@ python bootstrap.py run      # Start running experiment
 3. Load the model
 4. Go to **Local Server** tab → **Start Server**
 
-That's it. The bootstrap script checks everything else.
-
 ## Commands
 
 | Command | What it does |
 |---------|--------------|
-| `python bootstrap.py` | Check setup status |
-| `python bootstrap.py setup` | Install Python dependencies |
-| `python bootstrap.py run` | Run one experiment slice |
-| `python bootstrap.py run-all` | Run until all slices complete |
+| `./re3 run` | Run one experiment slice |
+| `./re3 run-all` | Run until all slices complete |
+| `./re3 status` | Check experiment progress |
+| `./re3 setup` | Install Python dependencies |
+| `./re3 check` | Verify setup is ready |
 
-## Collaborative Running
+## Collaboration
+
+### Requesting Access
+
+If you want to contribute test runs:
+
+```bash
+./re3 request
+```
+
+This creates a GitHub issue requesting collaborator access. The repo owner will approve you.
+
+### For Repo Owner - Approving Collaborators
+
+```bash
+./re3 approve <username>
+```
+
+This adds the user as a collaborator so they can push results.
+
+## How It Works
 
 Multiple people can run simultaneously. Git handles coordination:
 
-```bash
-python bootstrap.py run-all
-```
+1. **Pull** latest progress
+2. **Claim** a random available slice (push to lock it)
+3. **Run** the tests
+4. **Push** results when done
 
-Each run: pulls latest → claims random slice → pushes claim → runs → pushes results.
-
-## Alternatives
-
-If you have `just` installed:
-```bash
-just experiment      # Same as bootstrap.py run
-just experiment-all  # Same as bootstrap.py run-all
-```
-
-If you have `make`:
-```bash
-make run      # Same as bootstrap.py run
-make run-all  # Same as bootstrap.py run-all
-```
+Each slice is 50 tests of one config/strategy/benchmark combination.
