@@ -61,10 +61,16 @@ def git_pull() -> bool:
 
 
 def git_push(message: str = "Update progress") -> bool:
-    """Commit progress.json and push. Returns True if successful."""
+    """
+    Commit and push results.
+    
+    For collaborators: direct push.
+    For non-collaborators: creates a PR via fork.
+    """
     try:
-        # Add progress file
-        subprocess.run(['git', 'add', 'progress.json'], capture_output=True, timeout=10)
+        # Add data files and progress
+        subprocess.run(['git', 'add', 'progress.json', 'data/'],
+                      capture_output=True, timeout=10)
 
         # Commit (may fail if nothing changed, that's ok)
         subprocess.run(
@@ -72,22 +78,125 @@ def git_push(message: str = "Update progress") -> bool:
             capture_output=True, text=True, timeout=10
         )
 
-        # Push
+        # Try direct push first
         result = subprocess.run(
             ['git', 'push'],
             capture_output=True, text=True, timeout=30
         )
+
+        if result.returncode == 0:
+            return True
+
+        # Check if permission denied
+        stderr = result.stderr.lower()
+        if 'permission' in stderr or 'denied' in stderr or 'protected' in stderr or 'unable to access' in stderr:
+            print("  No direct push access - creating Pull Request...")
+            return create_pr_via_fork(message)
+
+        # Other error - try pull then push
+        git_pull()
+        result = subprocess.run(
+            ['git', 'push'],
+            capture_output=True, text=True, timeout=30
+        )
+
         if result.returncode != 0:
-            # If push fails, try pull then push again
-            git_pull()
-            result = subprocess.run(
-                ['git', 'push'],
-                capture_output=True, text=True, timeout=30
-            )
+            stderr2 = result.stderr.lower()
+            if 'permission' in stderr2 or 'denied' in stderr2:
+                print("  No direct push access - creating Pull Request...")
+                return create_pr_via_fork(message)
 
         return result.returncode == 0
     except Exception as e:
         print(f"  git push error: {e}")
+        return False
+
+
+def create_pr_via_fork(message: str) -> bool:
+    """Fork repo if needed, push to fork, create PR."""
+    try:
+        import random
+        import string
+
+        # Get current user
+        user_result = subprocess.run(
+            ['gh', 'api', 'user', '--jq', '.login'],
+            capture_output=True, text=True, timeout=10
+        )
+        if user_result.returncode != 0:
+            print("  Error: Not logged into GitHub CLI. Run: gh auth login")
+            return False
+        username = user_result.stdout.strip()
+
+        # Get upstream repo
+        remote_result = subprocess.run(
+            ['git', 'remote', 'get-url', 'origin'],
+            capture_output=True, text=True, timeout=10
+        )
+        upstream_url = remote_result.stdout.strip()
+        # Extract owner/repo from URL
+        if 'github.com' in upstream_url:
+            parts = upstream_url.rstrip('.git').split('/')
+            upstream_repo = f"{parts[-2]}/{parts[-1]}"
+        else:
+            print(f"  Cannot parse upstream URL: {upstream_url}")
+            return False
+
+        print(f"  Forking {upstream_repo}...")
+        # Fork if we don't have one
+        subprocess.run(
+            ['gh', 'repo', 'fork', upstream_repo, '--clone=false'],
+            capture_output=True, text=True, timeout=30
+        )  # Ignore "already exists" error
+
+        # Add fork as remote if not already
+        fork_url = f"https://github.com/{username}/RE3.git"
+        subprocess.run(
+            ['git', 'remote', 'add', 'fork', fork_url],
+            capture_output=True, timeout=10
+        )  # Ignore if already exists
+
+        # Create unique branch for this contribution
+        branch_name = f"contrib-{username}-" + "".join(random.choices(string.ascii_lowercase, k=6))
+        subprocess.run(['git', 'checkout', '-b', branch_name], capture_output=True, timeout=10)
+
+        # Push to fork
+        print(f"  Pushing to fork...")
+        push_result = subprocess.run(
+            ['git', 'push', '-u', 'fork', branch_name],
+            capture_output=True, text=True, timeout=30
+        )
+        if push_result.returncode != 0:
+            print(f"  Failed to push to fork: {push_result.stderr}")
+            subprocess.run(['git', 'checkout', 'master'], capture_output=True, timeout=10)
+            return False
+
+        # Create PR
+        print(f"  Creating Pull Request...")
+        pr_result = subprocess.run(
+            ['gh', 'pr', 'create',
+             '--repo', upstream_repo,
+             '--head', f"{username}:{branch_name}",
+             '--title', message,
+             '--body', f"Automated contribution from {username}
+
+Run results from RE3 distributed testing."],
+            capture_output=True, text=True, timeout=30
+        )
+
+        # Switch back to master
+        subprocess.run(['git', 'checkout', 'master'], capture_output=True, timeout=10)
+
+        if pr_result.returncode == 0:
+            pr_url = pr_result.stdout.strip()
+            print(f"  PR created: {pr_url}")
+            return True
+        else:
+            print(f"  PR creation failed: {pr_result.stderr}")
+            return False
+
+    except Exception as e:
+        print(f"  PR creation error: {e}")
         return False
 
 
