@@ -1067,14 +1067,14 @@
       "config_id": "C04",
       "strategy": "b4a_delimiter_swap",
       "benchmark": "mmlu",
-      "status": "pending",
-      "claimed_by": null,
-      "claimed_at": null,
-      "started_at": null,
-      "completed_at": null,
+      "status": "failed",
+      "claimed_by": "Paul@DESKTOP-5FT8NGT",
+      "claimed_at": "2026-01-19T03:12:03.531864+00:00",
+      "started_at": "2026-01-19T03:12:03.543837+00:00",
+      "completed_at": "2026-01-19T03:12:19.706719+00:00",
       "results_file": null,
       "stats": null,
-      "error": null
+      "error": "Sanity check failed: all tests failed instantly"
     },
     "C04_b4a_delimiter_swap_hellaswag": {
       "slice_id": "C04_b4a_delimiter_swap_hellaswag",
@@ -1529,10 +1529,10 @@
       "config_id": "C05",
       "strategy": "b4a_delimiter_swap",
       "benchmark": "gsm8k",
-      "status": "pending",
-      "claimed_by": null,
-      "claimed_at": null,
-      "started_at": null,
+      "status": "running",
+      "claimed_by": "Paul@DESKTOP-5FT8NGT",
+      "claimed_at": "2026-01-19T03:25:20.657898+00:00",
+      "started_at": "2026-01-19T03:25:20.669935+00:00",
       "completed_at": null,
       "results_file": null,
       "stats": null,
@@ -2673,13 +2673,19 @@
       "config_id": "C09",
       "strategy": "b1a_camelcase_pairs",
       "benchmark": "niah",
-      "status": "pending",
-      "claimed_by": null,
-      "claimed_at": null,
-      "started_at": null,
-      "completed_at": null,
-      "results_file": null,
-      "stats": null,
+      "status": "completed",
+      "claimed_by": "Paul@DESKTOP-5FT8NGT",
+      "claimed_at": "2026-01-19T03:54:04.860574+00:00",
+      "started_at": "2026-01-19T03:54:04.871864+00:00",
+      "completed_at": "2026-01-19T03:54:56.739157+00:00",
+      "results_file": "data\\runs\\phase1_20260118_225425.jsonl",
+      "stats": {
+        "total": 25,
+        "correct": 25,
+        "errors": 0,
+        "accuracy": 1.0,
+        "mean_latency_ms": 4317
+      },
       "error": null
     },
     "C09_b1b_camelcase_all_gsm8k": {
@@ -2925,13 +2931,19 @@
       "config_id": "C09",
       "strategy": "b3a_lowercase_all",
       "benchmark": "gsm8k",
-      "status": "pending",
-      "claimed_by": null,
-      "claimed_at": null,
-      "started_at": null,
-      "completed_at": null,
-      "results_file": null,
-      "stats": null,
+      "status": "completed",
+      "claimed_by": "Paul@DESKTOP-5FT8NGT",
+      "claimed_at": "2026-01-19T03:19:52.977192+00:00",
+      "started_at": "2026-01-19T03:19:52.988553+00:00",
+      "completed_at": "2026-01-19T03:20:29.017879+00:00",
+      "results_file": "data\\runs\\phase1_20260118_221956.jsonl",
+      "stats": {
+        "total": 50,
+        "correct": 0,
+        "errors": 50,
+        "accuracy": 0,
+        "mean_latency_ms": 2018
+      },
       "error": null
     },
     "C09_b3a_lowercase_all_mmlu": {
@@ -3071,13 +3083,19 @@
       "config_id": "C09",
       "strategy": "b4a_delimiter_swap",
       "benchmark": "hellaswag",
-      "status": "pending",
-      "claimed_by": null,
-      "claimed_at": null,
-      "started_at": null,
-      "completed_at": null,
-      "results_file": null,
-      "stats": null,
+      "status": "completed",
+      "claimed_by": "Paul@DESKTOP-5FT8NGT",
+      "claimed_at": "2026-01-19T03:55:37.740350+00:00",
+      "started_at": "2026-01-19T03:55:37.752974+00:00",
+      "completed_at": "2026-01-19T03:56:47.731913+00:00",
+      "results_file": "data\\runs\\phase1_20260118_225549.jsonl",
+      "stats": {
+        "total": 50,
+        "correct": 24,
+        "errors": 0,
+        "accuracy": 0.48,
+        "mean_latency_ms": 4223
+      },
       "error": null
     },
     "C09_b4a_delimiter_swap_niah": {
@@ -3595,10 +3613,10 @@
       "config_id": "C11",
       "strategy": "b1a_camelcase_pairs",
       "benchmark": "gsm8k",
-      "status": "pending",
-      "claimed_by": null,
-      "claimed_at": null,
-      "started_at": null,
+      "status": "running",
+      "claimed_by": "Paul@DESKTOP-5FT8NGT",
+      "claimed_at": "2026-01-19T03:27:31.264032+00:00",
+      "started_at": "2026-01-19T03:27:31.275717+00:00",
       "completed_at": null,
       "results_file": null,
       "stats": null,
@@ -5528,8 +5546,11 @@
   "workers": {
     "jpswi@Jace": {
       "last_seen": "2026-01-19T01:57:54.172006+00:00"
+    },
+    "Paul@DESKTOP-5FT8NGT": {
+      "last_seen": "2026-01-19T03:56:47.731923+00:00"
     }
   },
   "created_at": "2026-01-18T19:08:04.152462+00:00",
-  "last_updated": "2026-01-19T01:57:54.172006+00:00"
+  "last_updated": "2026-01-19T03:56:47.731920+00:00"
 }
