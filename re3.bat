@@ -94,3 +94,65 @@ echo Adding %2 as collaborator to %REPO%...
 gh api --method PUT repos/%REPO%/collaborators/%2 -f permission=push
 echo Done! %2 can now push to the repo.
 exit /b 0
+
+:pulldata
+if "%2"=="" (
+    echo Usage: re3 pull-data ^<PR_NUMBER^>
+    echo.
+    echo Open PRs with data:
+    gh pr list --repo %REPO% --search "Complete" --state open
+    exit /b 1
+)
+echo === Pull Data from PR #%2 ===
+echo.
+
+REM Get PR info
+for /f "tokens=*" %%i in ('gh pr view %2 --repo %REPO% --json title --jq ".title" 2^>nul') do set PR_TITLE=%%i
+for /f "tokens=*" %%i in ('gh pr view %2 --repo %REPO% --json headRefName --jq ".headRefName" 2^>nul') do set HEAD_REF=%%i
+for /f "tokens=*" %%i in ('gh pr view %2 --repo %REPO% --json headRepositoryOwner --jq ".headRepositoryOwner.login" 2^>nul') do set HEAD_OWNER=%%i
+for /f "tokens=*" %%i in ('gh pr view %2 --repo %REPO% --json headRepository --jq ".headRepository.name" 2^>nul') do set HEAD_REPO=%%i
+
+if "%HEAD_REF%"=="" (
+    echo Error: Could not fetch PR #%2
+    exit /b 1
+)
+
+echo PR: %PR_TITLE%
+echo From: %HEAD_OWNER%/%HEAD_REPO% @ %HEAD_REF%
+echo.
+
+REM Add remote if needed
+set REMOTE_NAME=contrib-%HEAD_OWNER%
+git remote get-url %REMOTE_NAME% >nul 2>&1 || git remote add %REMOTE_NAME% https://github.com/%HEAD_OWNER%/%HEAD_REPO%.git
+
+REM Fetch and checkout data files
+echo Fetching %HEAD_REF%...
+git fetch %REMOTE_NAME% %HEAD_REF%
+
+echo Extracting data files...
+git checkout %REMOTE_NAME%/%HEAD_REF% -- data/runs/ 2>nul
+git checkout %REMOTE_NAME%/%HEAD_REF% -- data/summaries/ 2>nul
+git checkout %REMOTE_NAME%/%HEAD_REF% -- progress.json 2>nul
+
+REM Validate JSONL
+echo Validating data...
+python -c "import sys,json,glob; files=glob.glob('data/runs/*.jsonl'); bad=[f for f in files if any(not l.strip() or json.loads(l) for l in open(f))]; sys.exit(1) if bad else print('  OK')" 2>nul || (
+    echo   Validation failed
+    git checkout HEAD -- data/ progress.json
+    exit /b 1
+)
+
+REM Commit
+git add data/runs/ data/summaries/ progress.json
+git commit -m "Data from PR #%2: %PR_TITLE%"
+
+echo.
+echo Data merged successfully!
+echo.
+
+set /p CLOSE_PR=Close PR #%2? [Y/n]
+if /i not "%CLOSE_PR%"=="n" (
+    gh pr close %2 --repo %REPO% --comment "Data merged via `re3 pull-data`. Thank you!"
+    echo PR closed.
+)
+exit /b 0
