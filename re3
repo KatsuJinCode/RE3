@@ -221,13 +221,14 @@ with open('$f') as fh:
 
 # Main dispatch
 case "${1:-help}" in
-    run)      cmd_run ;;
-    run-all)  cmd_run_all ;;
-    status)   cmd_status ;;
-    setup)    cmd_setup ;;
-    check)    cmd_check ;;
-    request)  cmd_request ;;
-    approve)  cmd_approve "$2" ;;
+    run)       cmd_run ;;
+    run-all)   cmd_run_all ;;
+    status)    cmd_status ;;
+    setup)     cmd_setup ;;
+    check)     cmd_check ;;
+    request)   cmd_request ;;
+    approve)   cmd_approve "$2" ;;
+    pull-data) cmd_pull_data "$2" ;;
     help|--help|-h) show_help ;;
     *)
         echo "Unknown command: $1"
