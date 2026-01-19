@@ -10,11 +10,12 @@ import time
 import json
 import os
 import platform
+import shutil
 import tempfile
 from pathlib import Path
 from dataclasses import dataclass, field
 from typing import Optional, List, Dict, Any, Callable, Iterator
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ThreadPoolExecutor
 import threading
 
 
@@ -29,15 +30,22 @@ GATEWAY_SCRIPT_PATH = _get_gateway_path()
 GATEWAY_SCRIPT = Path.home() / ".claude" / "scripts" / "safe-model-load.sh"
 
 
+def _gateway_available() -> bool:
+    return bool(shutil.which("bash")) and GATEWAY_SCRIPT.exists()
+
+
+
 @dataclass
 class PendingRequest:
     """A request that has been submitted but not yet completed."""
     request_id: int
     prompt: str
-    response_file: str
+    response_file: Optional[str]
     submit_time: float
     context: Any = None  # Caller-provided context (e.g., item, config)
     temp_files: List[str] = field(default_factory=list)
+    future: Any = None  # Used in direct mode (no gateway)
+
 
 
 @dataclass
@@ -83,13 +91,43 @@ class BatchRunner:
         self.timeout = timeout
         self.temperature = temperature
 
+        # Gateway mode uses ~/.claude/scripts/safe-model-load.sh via bash.
+        # On Windows setups without that, fall back to direct LM Studio HTTP.
+        self._use_gateway = _gateway_available()
+
+        self._executor: Optional[ThreadPoolExecutor] = None
+        self._direct_send: Optional[Callable[..., Any]] = None
+        if not self._use_gateway:
+            from lm_studio import send_prompt as direct_send
+
+            self._direct_send = direct_send
+            self._executor = ThreadPoolExecutor(max_workers=max_pending)
+
         self._pending: Dict[int, PendingRequest] = {}
         self._results: List[BatchResponse] = []
         self._next_id = 0
         self._lock = threading.Lock()
 
-    def _submit_request(self, prompt: str, system_prompt: Optional[str] = None) -> Optional[str]:
-        """Submit a single request to the gateway. Returns response file path or None."""
+    def _submit_request(self, prompt: str, system_prompt: Optional[str] = None):
+        """Submit a single request.
+
+        Returns:
+            None on failure, otherwise tuple (mode, handle, temp_files)
+            - mode == "gateway": handle is response file path
+            - mode == "direct":  handle is a Future
+        """
+        if not self._use_gateway:
+            assert self._executor is not None
+            assert self._direct_send is not None
+            future = self._executor.submit(
+                self._direct_send,
+                prompt,
+                system_prompt=system_prompt,
+                temperature=self.temperature,
+                timeout=self.timeout,
+            )
+            return "direct", future, []
+
         prompt_file = None
         system_file = None
         temp_files = []
@@ -132,7 +170,6 @@ class BatchRunner:
             )
 
             if result.returncode != 0:
-                # Clean up temp files on error
                 for tf in temp_files:
                     try:
                         os.unlink(tf)
@@ -160,9 +197,9 @@ class BatchRunner:
                 if len(file_path) >= 3 and file_path[2] == '/':
                     file_path = file_path[1].upper() + ':' + file_path[2:]
 
-            return file_path, temp_files
+            return "gateway", file_path, temp_files
 
-        except Exception as e:
+        except Exception:
             for tf in temp_files:
                 try:
                     os.unlink(tf)
@@ -170,8 +207,10 @@ class BatchRunner:
                     pass
             return None
 
-    def _read_response(self, file_path: str) -> Optional[str]:
+    def _read_response(self, file_path: Optional[str]) -> Optional[str]:
         """Read and parse response from file. Returns text or None if not ready."""
+        if not file_path:
+            return None
         if not os.path.exists(file_path):
             return None
 
@@ -220,30 +259,40 @@ class BatchRunner:
                 time.sleep(self.poll_interval)
 
         # Submit request
-        result = self._submit_request(prompt, system_prompt)
+        submitted = self._submit_request(prompt, system_prompt)
 
         with self._lock:
             request_id = self._next_id
             self._next_id += 1
 
-        if result is None:
+        if submitted is None:
             # Immediate failure
             self._results.append(BatchResponse(
                 request_id=request_id,
                 text="",
                 latency_ms=0,
                 context=context,
-                error="Failed to submit request to gateway"
+                error="Failed to submit request"
             ))
         else:
-            file_path, temp_files = result
+            mode, handle, temp_files = submitted  # ("direct"|"gateway", handle, temp_files)
+
+            response_file = None
+            future = None
+            if mode == "gateway":
+                assert isinstance(handle, str)
+                response_file = handle
+            else:
+                future = handle
+
             pending = PendingRequest(
                 request_id=request_id,
                 prompt=prompt,
-                response_file=file_path,
+                response_file=response_file,
                 submit_time=time.time(),
                 context=context,
-                temp_files=temp_files
+                temp_files=temp_files,
+                future=future,
             )
             with self._lock:
                 self._pending[request_id] = pending
@@ -276,7 +325,38 @@ class BatchRunner:
                             pass
                     continue
 
-                # Try to read response
+                # Direct mode: poll future
+                if pending.future is not None:
+                    if not pending.future.done():
+                        continue
+                    try:
+                        resp = pending.future.result()
+                        latency_ms = getattr(resp, "latency_ms", None)
+                        if latency_ms is None:
+                            latency_ms = int((time.time() - pending.submit_time) * 1000)
+
+                        err = getattr(resp, "error", None)
+                        txt = getattr(resp, "text", "") or ""
+                        self._results.append(BatchResponse(
+                            request_id=req_id,
+                            text=txt,
+                            latency_ms=int(latency_ms),
+                            context=pending.context,
+                            error=err,
+                        ))
+                    except Exception as e:
+                        elapsed2 = time.time() - pending.submit_time
+                        self._results.append(BatchResponse(
+                            request_id=req_id,
+                            text="",
+                            latency_ms=int(elapsed2 * 1000),
+                            context=pending.context,
+                            error=str(e),
+                        ))
+                    completed_ids.append(req_id)
+                    continue
+
+                # Gateway mode: read response file
                 text = self._read_response(pending.response_file)
                 if text is not None:
                     latency_ms = int((time.time() - pending.submit_time) * 1000)
