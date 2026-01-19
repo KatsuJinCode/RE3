@@ -16,6 +16,7 @@ if "%1"=="setup" goto setup
 if "%1"=="check" goto check
 if "%1"=="request" goto request
 if "%1"=="approve" goto approve
+if "%1"=="pull-data" goto pulldata
 
 echo Unknown command: %1
 echo Run 're3 help' for usage.
