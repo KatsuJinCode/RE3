@@ -1,0 +1,2 @@
+config_id,pattern,b_strategy,benchmark,n_total,n_correct,n_error,accuracy,accuracy_95ci_low,accuracy_95ci_high,avg_latency_ms,avg_tokens_input,avg_tokens_output
+C14,BBB,b4a_delimiter_swap,gsm8k,3,2,0,0.6667,0.2077,0.9385,8275.3,221,110.3

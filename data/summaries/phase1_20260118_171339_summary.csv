@@ -1,0 +1,2 @@
+config_id,pattern,b_strategy,benchmark,n_total,n_correct,n_error,accuracy,accuracy_95ci_low,accuracy_95ci_high,avg_latency_ms,avg_tokens_input,avg_tokens_output
+C06,BB,b1a_camelcase_pairs,gsm8k,5,4,0,0.8,0.3755,0.9638,11180,150.6,121.2
