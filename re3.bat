@@ -31,6 +31,7 @@ echo   run-all     Run until all slices complete
 echo   status      Show experiment progress
 echo   request     Request collaborator access
 echo   approve     (Owner only) Approve a collaborator
+echo   pull-data   (Owner only) Pull data files from a PR
 echo.
 echo Setup:
 echo   setup       Install dependencies
