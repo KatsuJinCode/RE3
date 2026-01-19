@@ -1,0 +1,26 @@
+﻿{
+    "adjacency":  {
+
+                  },
+    "validation_queue":  [
+
+                         ],
+    "validation_queue_next_id":  1,
+    "project_root":  "C:/Users/jpswi/personal projects/RE3-standalone",
+    "sessions":  {
+                     "94922ce9-159d-486f-b0b5-7597154aacbf":  {
+                                                                  "last_turn":  1,
+                                                                  "last_active":  "2026-01-18T20:17:30.2502719-08:00",
+                                                                  "last_dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone"
+                                                              }
+                 },
+    "metadata":  {
+                     "last_turn":  1,
+                     "cycles_found":  0,
+                     "total_connected":  0,
+                     "total_orphans":  0
+                 },
+    "edges":  [
+
+              ]
+}
