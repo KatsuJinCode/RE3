@@ -32,6 +32,14 @@
                                                             11
                                                         ]
                                             },
+                      "commit_or_stash":  {
+                                              "out":  [
+
+                                                      ],
+                                              "in":  [
+                                                         53
+                                                     ]
+                                          },
                       "6 additions":  {
                                           "in":  [
 
@@ -48,6 +56,14 @@
                                                  16
                                              ]
                                  },
+                      "pull_failure":  {
+                                           "out":  [
+                                                       50
+                                                   ],
+                                           "in":  [
+
+                                                  ]
+                                       },
                       "PYTHONIOENCODING":  {
                                                "in":  [
 
@@ -57,21 +73,37 @@
                                                        ]
                                            },
                       "safe-model-load.sh":  {
-                                                 "out":  [
-
-                                                         ],
                                                  "in":  [
                                                             38
-                                                        ]
-                                             },
-                      "user_execution":  {
-                                             "out":  [
+                                                        ],
+                                                 "out":  [
 
-                                                     ],
+                                                         ]
+                                             },
+                      "unstaged":  {
+                                       "out":  [
+                                                   55
+                                               ],
+                                       "in":  [
+
+                                              ]
+                                   },
+                      "user_execution":  {
                                              "in":  [
                                                         46
-                                                    ]
+                                                    ],
+                                             "out":  [
+
+                                                     ]
                                          },
+                      "full_harness":  {
+                                           "in":  [
+                                                      24
+                                                  ],
+                                           "out":  [
+                                                       25
+                                                   ]
+                                       },
                       "no harness code":  {
                                               "in":  [
                                                          6
@@ -80,14 +112,14 @@
 
                                                       ]
                                           },
-                      "python_exception":  {
-                                               "in":  [
-                                                          11
-                                                      ],
-                                               "out":  [
-                                                           12
-                                                       ]
-                                           },
+                      "git_pull":  {
+                                       "out":  [
+                                                   47
+                                               ],
+                                       "in":  [
+                                                  49
+                                              ]
+                                   },
                       "utf8":  {
                                    "in":  [
 
@@ -96,6 +128,14 @@
                                                19
                                            ]
                                },
+                      "distributed_runner":  {
+                                                 "out":  [
+                                                             49
+                                                         ],
+                                                 "in":  [
+
+                                                        ]
+                                             },
                       "1 addition":  {
                                          "in":  [
 
@@ -146,14 +186,22 @@
                                                        33
                                                    ]
                                        },
-                      "full_harness":  {
-                                           "in":  [
-                                                      24
+                      "local_state":  {
+                                          "out":  [
+
                                                   ],
-                                           "out":  [
-                                                       25
-                                                   ]
-                                       },
+                                          "in":  [
+                                                     51
+                                                 ]
+                                      },
+                      "python_exception":  {
+                                               "in":  [
+                                                          11
+                                                      ],
+                                               "out":  [
+                                                           12
+                                                       ]
+                                           },
                       "data/runs/":  {
                                          "in":  [
 
@@ -194,6 +242,14 @@
                                                          17
                                                      ]
                                          },
+                      "verification":  {
+                                           "out":  [
+                                                       56
+                                                   ],
+                                           "in":  [
+
+                                                  ]
+                                       },
                       "all_instant_errors":  {
                                                  "in":  [
                                                             9
@@ -210,6 +266,14 @@
                                                       15
                                                   ]
                                       },
+                      "generated_file":  {
+                                             "out":  [
+
+                                                     ],
+                                             "in":  [
+                                                        55
+                                                    ]
+                                         },
                       "0 deletions":  {
                                           "in":  [
                                                      2
@@ -243,13 +307,13 @@
                                                      ]
                                          },
                       "changes":  {
+                                      "in":  [
+
+                                             ],
                                       "out":  [
                                                   43,
                                                   44
-                                              ],
-                                      "in":  [
-
-                                             ]
+                                              ]
                                   },
                       "sanity_check_failure":  {
                                                    "in":  [
@@ -260,12 +324,12 @@
                                                            ]
                                                },
                       "distributed_runner.py":  {
-                                                    "out":  [
-
-                                                            ],
                                                     "in":  [
                                                                37
-                                                           ]
+                                                           ],
+                                                    "out":  [
+
+                                                            ]
                                                 },
                       "progress.json":  {
                                             "in":  [
@@ -278,27 +342,27 @@
                                         },
                       "auto_commit":  {
                                           "out":  [
-
+                                                      54
                                                   ],
                                           "in":  [
                                                      43
                                                  ]
                                       },
                       "minimal_risk":  {
-                                           "out":  [
-
-                                                   ],
                                            "in":  [
                                                       44
-                                                  ]
+                                                  ],
+                                           "out":  [
+
+                                                   ]
                                        },
                       "syntax_error":  {
-                                           "out":  [
-                                                       37
-                                                   ],
                                            "in":  [
 
-                                                  ]
+                                                  ],
+                                           "out":  [
+                                                       37
+                                                   ]
                                        },
                       "6":  {
                                 "in":  [
@@ -317,20 +381,20 @@
                                                        ]
                                            },
                       "re3_run":  {
-                                      "out":  [
-
-                                              ],
                                       "in":  [
                                                  41
-                                             ]
+                                             ],
+                                      "out":  [
+
+                                              ]
                                   },
                       "session":  {
-                                      "out":  [
-                                                  42
-                                              ],
                                       "in":  [
 
-                                             ]
+                                             ],
+                                      "out":  [
+                                                  42
+                                              ]
                                   },
                       "2":  {
                                 "in":  [
@@ -356,13 +420,21 @@
 
                                                   ]
                                       },
-                      "all_fixes":  {
-                                        "out":  [
+                      "git_rebase":  {
+                                         "out":  [
 
-                                                ],
+                                                 ],
+                                         "in":  [
+                                                    48
+                                                ]
+                                     },
+                      "all_fixes":  {
                                         "in":  [
                                                    40
-                                               ]
+                                               ],
+                                        "out":  [
+
+                                                ]
                                     },
                       "not modifications to existing":  {
                                                             "in":  [
@@ -396,6 +468,15 @@
                                                       26
                                                   ]
                                       },
+                      "git_status":  {
+                                         "out":  [
+
+                                                 ],
+                                         "in":  [
+                                                    52,
+                                                    56
+                                                ]
+                                     },
                       "experiment":  {
                                          "in":  [
 
@@ -421,13 +502,21 @@
                                                    ]
                                        },
                       "validation":  {
-                                         "out":  [
-                                                     46
-                                                 ],
                                          "in":  [
 
-                                                ]
+                                                ],
+                                         "out":  [
+                                                     46
+                                                 ]
                                      },
+                      "continuing with local state\"":  {
+                                                            "out":  [
+
+                                                                    ],
+                                                            "in":  [
+                                                                       57
+                                                                   ]
+                                                        },
                       "new files":  {
                                         "in":  [
 
@@ -437,13 +526,13 @@
                                                 ]
                                     },
                       "e2e_test":  {
+                                       "in":  [
+                                                  23
+                                              ],
                                        "out":  [
                                                    24,
                                                    40
-                                               ],
-                                       "in":  [
-                                                  23
-                                              ]
+                                               ]
                                    },
                       "95 additions":  {
                                            "in":  [
@@ -461,13 +550,29 @@
 
                                                        ]
                                            },
+                      "unstaged_files":  {
+                                             "out":  [
+                                                         53
+                                                     ],
+                                             "in":  [
+
+                                                    ]
+                                         },
+                      "\"WARNING: Could not pull":  {
+                                                        "out":  [
+                                                                    57
+                                                                ],
+                                                        "in":  [
+
+                                                               ]
+                                                    },
                       "rollback":  {
-                                       "out":  [
-                                                   45
-                                               ],
                                        "in":  [
 
-                                              ]
+                                              ],
+                                       "out":  [
+                                                   45
+                                               ]
                                    },
                       "6 deletions":  {
                                           "in":  [
@@ -477,6 +582,14 @@
 
                                                   ]
                                       },
+                      "warning":  {
+                                      "out":  [
+
+                                              ],
+                                      "in":  [
+                                                 50
+                                             ]
+                                  },
                       "different_env":  {
                                             "in":  [
                                                        27
@@ -486,20 +599,37 @@
                                                     ]
                                         },
                       "git_revert":  {
-                                         "out":  [
-
-                                                 ],
                                          "in":  [
                                                     45
-                                                ]
+                                                ],
+                                         "out":  [
+
+                                                 ]
                                      },
+                      "runner":  {
+                                     "out":  [
+                                                 51
+                                             ],
+                                     "in":  [
+
+                                            ]
+                                 },
+                      "unstaged_changes_error":  {
+                                                     "out":  [
+
+                                                             ],
+                                                     "in":  [
+                                                                47
+                                                            ]
+                                                 },
                       "diagnosis":  {
+                                        "out":  [
+                                                    32,
+                                                    52
+                                                ],
                                         "in":  [
 
-                                               ],
-                                        "out":  [
-                                                    32
-                                                ]
+                                               ]
                                     },
                       "file_path":  {
                                         "in":  [
@@ -519,28 +649,36 @@
                                                                                                             ]
                                                                                                 },
                       "batch_runner.py":  {
-                                              "out":  [
-
-                                                      ],
                                               "in":  [
                                                          39
-                                                     ]
-                                          },
-                      "user":  {
-                                   "out":  [
-                                               41
-                                           ],
-                                   "in":  [
-
-                                          ]
-                               },
-                      "user_validation":  {
+                                                     ],
                                               "out":  [
 
-                                                      ],
+                                                      ]
+                                          },
+                      "edits":  {
+                                    "out":  [
+
+                                            ],
+                                    "in":  [
+                                               54
+                                           ]
+                                },
+                      "user":  {
+                                   "in":  [
+
+                                          ],
+                                   "out":  [
+                                               41
+                                           ]
+                               },
+                      "user_validation":  {
                                               "in":  [
                                                          42
-                                                     ]
+                                                     ],
+                                              "out":  [
+
+                                                      ]
                                           },
                       "subprocess":  {
                                          "in":  [
@@ -568,12 +706,12 @@
                                                         ]
                                             },
                       "protocol_mismatch":  {
-                                                "out":  [
-                                                            39
-                                                        ],
                                                 "in":  [
 
-                                                       ]
+                                                       ],
+                                                "out":  [
+                                                            39
+                                                        ]
                                             },
                       "print_result":  {
                                            "in":  [
@@ -583,13 +721,21 @@
                                                        14
                                                    ]
                                        },
+                      "unstaged_changes":  {
+                                               "out":  [
+                                                           48
+                                                       ],
+                                               "in":  [
+
+                                                      ]
+                                           },
                       "encoding_error":  {
-                                             "out":  [
-                                                         38
-                                                     ],
                                              "in":  [
 
-                                                    ]
+                                                    ],
+                                             "out":  [
+                                                         38
+                                                     ]
                                          }
                   },
     "validation_queue":  [
@@ -599,8 +745,8 @@
     "project_root":  "C:/Users/jpswi/personal projects/RE3-standalone",
     "sessions":  {
                      "32863415-3fb0-4894-af4e-df1822be358d":  {
-                                                                  "last_turn":  12,
-                                                                  "last_active":  "2026-01-22T17:50:49.4035416-08:00",
+                                                                  "last_turn":  13,
+                                                                  "last_active":  "2026-01-22T17:51:44.7085166-08:00",
                                                                   "last_dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone"
                                                               },
                      "94922ce9-159d-486f-b0b5-7597154aacbf":  {
@@ -610,10 +756,10 @@
                                                               }
                  },
     "metadata":  {
-                     "last_turn":  12,
-                     "cycles_found":  1,
-                     "total_connected":  21,
-                     "total_orphans":  25
+                     "last_turn":  13,
+                     "cycles_found":  2,
+                     "total_connected":  22,
+                     "total_orphans":  35
                  },
     "edges":  [
                   {
@@ -1084,6 +1230,116 @@
                       "sub":  "validation",
                       "obj":  "user_execution",
                       "pred":  "depends_on",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  13,
+                      "timestamp":  "2026-01-22T17:51:44.7085166-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "git_pull",
+                      "obj":  "unstaged_changes_error",
+                      "pred":  "fails_with",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  13,
+                      "timestamp":  "2026-01-22T17:51:44.7085166-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "unstaged_changes",
+                      "obj":  "git_rebase",
+                      "pred":  "block",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  13,
+                      "timestamp":  "2026-01-22T17:51:44.7085166-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "distributed_runner",
+                      "obj":  "git_pull",
+                      "pred":  "calls",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  13,
+                      "timestamp":  "2026-01-22T17:51:44.7085166-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "pull_failure",
+                      "obj":  "warning",
+                      "pred":  "treated_as",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  13,
+                      "timestamp":  "2026-01-22T17:51:44.7085166-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "runner",
+                      "obj":  "local_state",
+                      "pred":  "continues_with",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  13,
+                      "timestamp":  "2026-01-22T17:51:44.7085166-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "diagnosis",
+                      "obj":  "git_status",
+                      "pred":  "requires",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  13,
+                      "timestamp":  "2026-01-22T17:51:44.7085166-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "unstaged_files",
+                      "obj":  "commit_or_stash",
+                      "pred":  "need",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  13,
+                      "timestamp":  "2026-01-22T17:51:44.7085166-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "auto_commit",
+                      "obj":  "edits",
+                      "pred":  "should_have_committed",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  13,
+                      "timestamp":  "2026-01-22T17:51:44.7085166-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "unstaged",
+                      "obj":  "generated_file",
+                      "pred":  "might_be",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  13,
+                      "timestamp":  "2026-01-22T17:51:44.7085166-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "verification",
+                      "obj":  "git_status",
+                      "pred":  "requires",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  13,
+                      "timestamp":  "2026-01-22T17:51:44.7085166-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "double",
+                      "sub":  "\"WARNING: Could not pull",
+                      "obj":  "continuing with local state\"",
+                      "pred":  "is",
                       "session":  "32863415-3fb0-4894-af4e-df1822be358d"
                   }
               ]
