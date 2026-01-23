@@ -1,5 +1,21 @@
 ﻿{
     "adjacency":  {
+                      "failure":  {
+                                      "in":  [
+                                                 21
+                                             ],
+                                      "out":  [
+
+                                              ]
+                                  },
+                      "UnicodeEncodeError":  {
+                                                 "in":  [
+                                                            12
+                                                        ],
+                                                 "out":  [
+                                                             13
+                                                         ]
+                                             },
                       "component_test":  {
                                              "in":  [
                                                         22
@@ -8,38 +24,6 @@
                                                          23
                                                      ]
                                          },
-                      "6 additions":  {
-                                          "in":  [
-
-                                                 ],
-                                          "out":  [
-                                                      1
-                                                  ]
-                                      },
-                      "all_unicode":  {
-                                          "in":  [
-                                                     19
-                                                 ],
-                                          "out":  [
-
-                                                  ]
-                                      },
-                      "gemma_model":  {
-                                          "in":  [
-                                                     15
-                                                 ],
-                                          "out":  [
-
-                                                  ]
-                                      },
-                      "shell_true_subprocess":  {
-                                                    "in":  [
-                                                               31
-                                                           ],
-                                                    "out":  [
-
-                                                            ]
-                                                },
                       "subprocess_exit_1":  {
                                                 "in":  [
                                                            10
@@ -48,25 +32,187 @@
                                                             11
                                                         ]
                                             },
-                      "not modifications to existing":  {
-                                                            "in":  [
-                                                                       4
-                                                                   ],
-                                                            "out":  [
-
-                                                                    ]
-                                                        },
-                      "direct_text":  {
+                      "6 additions":  {
                                           "in":  [
 
                                                  ],
                                           "out":  [
-                                                      36
+                                                      1
                                                   ]
                                       },
-                      "current_env":  {
+                      "cp1252":  {
+                                     "in":  [
+                                                17
+                                            ],
+                                     "out":  [
+                                                 16
+                                             ]
+                                 },
+                      "PYTHONIOENCODING":  {
+                                               "in":  [
+
+                                                      ],
+                                               "out":  [
+                                                           18
+                                                       ]
+                                           },
+                      "safe-model-load.sh":  {
+                                                 "out":  [
+
+                                                         ],
+                                                 "in":  [
+                                                            38
+                                                        ]
+                                             },
+                      "user_execution":  {
+                                             "out":  [
+
+                                                     ],
+                                             "in":  [
+                                                        46
+                                                    ]
+                                         },
+                      "no harness code":  {
+                                              "in":  [
+                                                         6
+                                                     ],
+                                              "out":  [
+
+                                                      ]
+                                          },
+                      "python_exception":  {
+                                               "in":  [
+                                                          11
+                                                      ],
+                                               "out":  [
+                                                           12
+                                                       ]
+                                           },
+                      "utf8":  {
+                                   "in":  [
+
+                                          ],
+                                   "out":  [
+                                               19
+                                           ]
+                               },
+                      "1 addition":  {
+                                         "in":  [
+
+                                                ],
+                                         "out":  [
+                                                     2
+                                                 ]
+                                     },
+                      "sanity_check":  {
+                                           "in":  [
+
+                                                  ],
+                                           "out":  [
+                                                       21
+                                                   ]
+                                       },
+                      "direct_bash":  {
                                           "in":  [
-                                                     29
+                                                     28
+                                                 ],
+                                          "out":  [
+                                                      29
+                                                  ]
+                                      },
+                      "my_test":  {
+                                      "in":  [
+
+                                             ],
+                                      "out":  [
+                                                  28
+                                              ]
+                                  },
+                      "temp_files":  {
+                                         "in":  [
+                                                    34,
+                                                    35,
+                                                    36
+                                                ],
+                                         "out":  [
+
+                                                 ]
+                                     },
+                      "not an error":  {
+                                           "in":  [
+
+                                                  ],
+                                           "out":  [
+                                                       33
+                                                   ]
+                                       },
+                      "full_harness":  {
+                                           "in":  [
+                                                      24
+                                                  ],
+                                           "out":  [
+                                                       25
+                                                   ]
+                                       },
+                      "data/runs/":  {
+                                         "in":  [
+
+                                                ],
+                                         "out":  [
+                                                     5
+                                                 ]
+                                     },
+                      "env_var":  {
+                                      "in":  [
+                                                 30
+                                             ],
+                                      "out":  [
+
+                                              ]
+                                  },
+                      "just incorrect":  {
+                                             "in":  [
+                                                        33
+                                                    ],
+                                             "out":  [
+
+                                                     ]
+                                         },
+                      "shell_true_subprocess":  {
+                                                    "in":  [
+                                                               31
+                                                           ],
+                                                    "out":  [
+
+                                                            ]
+                                                },
+                      "windows_python":  {
+                                             "in":  [
+
+                                                    ],
+                                             "out":  [
+                                                         17
+                                                     ]
+                                         },
+                      "all_instant_errors":  {
+                                                 "in":  [
+                                                            9
+                                                        ],
+                                                 "out":  [
+                                                             10
+                                                         ]
+                                             },
+                      "emoji_chars":  {
+                                          "in":  [
+                                                     14
+                                                 ],
+                                          "out":  [
+                                                      15
+                                                  ]
+                                      },
+                      "0 deletions":  {
+                                          "in":  [
+                                                     2
                                                  ],
                                           "out":  [
 
@@ -80,22 +226,47 @@
 
                                                    ]
                                        },
-                      "all data files":  {
-                                             "in":  [
+                      "fix":  {
+                                  "in":  [
 
+                                         ],
+                                  "out":  [
+                                              22
+                                          ]
+                              },
+                      "not the script":  {
+                                             "in":  [
+                                                        20
                                                     ],
                                              "out":  [
-                                                         6
-                                                     ]
-                                         },
-                      "windows_python":  {
-                                             "in":  [
 
-                                                    ],
-                                             "out":  [
-                                                         17
                                                      ]
                                          },
+                      "changes":  {
+                                      "out":  [
+                                                  43,
+                                                  44
+                                              ],
+                                      "in":  [
+
+                                             ]
+                                  },
+                      "sanity_check_failure":  {
+                                                   "in":  [
+                                                              8
+                                                          ],
+                                                   "out":  [
+                                                               9
+                                                           ]
+                                               },
+                      "distributed_runner.py":  {
+                                                    "out":  [
+
+                                                            ],
+                                                    "in":  [
+                                                               37
+                                                           ]
+                                                },
                       "progress.json":  {
                                             "in":  [
                                                        3,
@@ -105,321 +276,29 @@
 
                                                     ]
                                         },
-                      "failure":  {
-                                      "in":  [
-                                                 21
-                                             ],
-                                      "out":  [
-
-                                              ]
-                                  },
-                      "all_instant_errors":  {
-                                                 "in":  [
-                                                            9
-                                                        ],
-                                                 "out":  [
-                                                             10
-                                                         ]
-                                             },
-                      "95 additions":  {
-                                           "in":  [
+                      "auto_commit":  {
+                                          "out":  [
 
                                                   ],
+                                          "in":  [
+                                                     43
+                                                 ]
+                                      },
+                      "minimal_risk":  {
                                            "out":  [
-                                                       0
-                                                   ]
-                                       },
-                      "my_test":  {
-                                      "in":  [
 
-                                             ],
-                                      "out":  [
-                                                  28
-                                              ]
-                                  },
-                      "emoji_chars":  {
-                                          "in":  [
-                                                     14
-                                                 ],
-                                          "out":  [
-                                                      15
-                                                  ]
-                                      },
-                      "fix":  {
-                                  "in":  [
-
-                                         ],
-                                  "out":  [
-                                              22
-                                          ]
-                              },
-                      "default_encoding":  {
-                                               "in":  [
-                                                          18
-                                                      ],
-                                               "out":  [
-
-                                                       ]
-                                           },
-                      "0 deletions":  {
-                                          "in":  [
-                                                     2
-                                                 ],
-                                          "out":  [
-
-                                                  ]
-                                      },
-                      "cp1252":  {
-                                     "in":  [
-                                                17
-                                            ],
-                                     "out":  [
-                                                 16
-                                             ]
-                                 },
-                      "data/runs/":  {
-                                         "in":  [
-
-                                                ],
-                                         "out":  [
-                                                     5
-                                                 ]
-                                     },
-                      "experiment":  {
-                                         "in":  [
-
-                                                ],
-                                         "out":  [
-                                                     8
-                                                 ]
-                                     },
-                      "python_exception":  {
-                                               "in":  [
-                                                          11
-                                                      ],
-                                               "out":  [
-                                                           12
-                                                       ]
-                                           },
-                      "PYTHONIOENCODING":  {
-                                               "in":  [
-
-                                                      ],
-                                               "out":  [
-                                                           18
-                                                       ]
-                                           },
-                      "env_var":  {
-                                      "in":  [
-                                                 30
-                                             ],
-                                      "out":  [
-
-                                              ]
-                                  },
-                      "sanity_check":  {
-                                           "in":  [
-
-                                                  ],
-                                           "out":  [
-                                                       21
-                                                   ]
-                                       },
-                      "BatchRunner":  {
-                                          "in":  [
-                                                     25
-                                                 ],
-                                          "out":  [
-                                                      26
-                                                  ]
-                                      },
-                      "sanity_check_failure":  {
-                                                   "in":  [
-                                                              8
-                                                          ],
-                                                   "out":  [
-                                                               9
-                                                           ]
-                                               },
-                      "not the script":  {
-                                             "in":  [
-                                                        20
-                                                    ],
-                                             "out":  [
-
-                                                     ]
-                                         },
-                      "file_path":  {
-                                        "in":  [
-
-                                               ],
-                                        "out":  [
-                                                    34,
-                                                    35
-                                                ]
-                                    },
-                      "new files":  {
-                                        "in":  [
-
-                                               ],
-                                        "out":  [
-                                                    4
-                                                ]
-                                    },
-                      "actual_path_trace":  {
-                                                "in":  [
-                                                           32
-                                                       ],
-                                                "out":  [
-
-                                                        ]
-                                            },
-                      "subprocess":  {
-                                         "in":  [
-                                                    26
-                                                ],
-                                         "out":  [
-                                                     27,
-                                                     30
-                                                 ]
-                                     },
-                      "1 addition":  {
-                                         "in":  [
-
-                                                ],
-                                         "out":  [
-                                                     2
-                                                 ]
-                                     },
-                      "temp_files":  {
-                                         "in":  [
-                                                    34,
-                                                    35,
-                                                    36
-                                                ],
-                                         "out":  [
-
-                                                 ]
-                                     },
-                      "different_env":  {
-                                            "in":  [
-                                                       27
                                                    ],
-                                            "out":  [
-
-                                                    ]
-                                        },
-                      "e2e_test":  {
-                                       "in":  [
-                                                  23
-                                              ],
-                                       "out":  [
-                                                   24
-                                               ]
-                                   },
-                      "6 deletions":  {
-                                          "in":  [
-                                                     1
-                                                 ],
-                                          "out":  [
+                                           "in":  [
+                                                      44
+                                                  ]
+                                       },
+                      "syntax_error":  {
+                                           "out":  [
+                                                       37
+                                                   ],
+                                           "in":  [
 
                                                   ]
-                                      },
-                      "full_harness":  {
-                                           "in":  [
-                                                      24
-                                                  ],
-                                           "out":  [
-                                                       25
-                                                   ]
-                                       },
-                      "utf8":  {
-                                   "in":  [
-
-                                          ],
-                                   "out":  [
-                                               19
-                                           ]
-                               },
-                      "just incorrect":  {
-                                             "in":  [
-                                                        33
-                                                    ],
-                                             "out":  [
-
-                                                     ]
-                                         },
-                      "no harness code":  {
-                                              "in":  [
-                                                         6
-                                                     ],
-                                              "out":  [
-
-                                                      ]
-                                          },
-                      "print_result":  {
-                                           "in":  [
-                                                      13
-                                                  ],
-                                           "out":  [
-                                                       14
-                                                   ]
-                                       },
-                      "batch_runner":  {
-                                           "in":  [
-
-                                                  ],
-                                           "out":  [
-                                                       31
-                                                   ]
-                                       },
-                      "UnicodeEncodeError":  {
-                                                 "in":  [
-                                                            12
-                                                        ],
-                                                 "out":  [
-                                                             13
-                                                         ]
-                                             },
-                      "2":  {
-                                "in":  [
-
-                                       ],
-                                "out":  [
-                                            7
-                                        ]
-                            },
-                      "data/runs/*.jsonl":  {
-                                                "in":  [
-
-                                                       ],
-                                                "out":  [
-                                                            3
-                                                        ]
-                                            },
-                      "emoji_codepoints":  {
-                                               "in":  [
-                                                          16
-                                                      ],
-                                               "out":  [
-
-                                                       ]
-                                           },
-                      "the display shows mojibake but that\u0027s just the terminal encoding":  {
-                                                                                                    "in":  [
-
-                                                                                                           ],
-                                                                                                    "out":  [
-                                                                                                                20
-                                                                                                            ]
-                                                                                                },
-                      "not an error":  {
-                                           "in":  [
-
-                                                  ],
-                                           "out":  [
-                                                       33
-                                                   ]
                                        },
                       "6":  {
                                 "in":  [
@@ -429,14 +308,191 @@
 
                                         ]
                             },
-                      "direct_bash":  {
+                      "default_encoding":  {
+                                               "in":  [
+                                                          18
+                                                      ],
+                                               "out":  [
+
+                                                       ]
+                                           },
+                      "re3_run":  {
+                                      "out":  [
+
+                                              ],
+                                      "in":  [
+                                                 41
+                                             ]
+                                  },
+                      "session":  {
+                                      "out":  [
+                                                  42
+                                              ],
+                                      "in":  [
+
+                                             ]
+                                  },
+                      "2":  {
+                                "in":  [
+
+                                       ],
+                                "out":  [
+                                            7
+                                        ]
+                            },
+                      "all data files":  {
+                                             "in":  [
+
+                                                    ],
+                                             "out":  [
+                                                         6
+                                                     ]
+                                         },
+                      "all_unicode":  {
                                           "in":  [
-                                                     28
+                                                     19
                                                  ],
                                           "out":  [
-                                                      29
+
                                                   ]
                                       },
+                      "all_fixes":  {
+                                        "out":  [
+
+                                                ],
+                                        "in":  [
+                                                   40
+                                               ]
+                                    },
+                      "not modifications to existing":  {
+                                                            "in":  [
+                                                                       4
+                                                                   ],
+                                                            "out":  [
+
+                                                                    ]
+                                                        },
+                      "data/runs/*.jsonl":  {
+                                                "in":  [
+
+                                                       ],
+                                                "out":  [
+                                                            3
+                                                        ]
+                                            },
+                      "gemma_model":  {
+                                          "in":  [
+                                                     15
+                                                 ],
+                                          "out":  [
+
+                                                  ]
+                                      },
+                      "BatchRunner":  {
+                                          "in":  [
+                                                     25
+                                                 ],
+                                          "out":  [
+                                                      26
+                                                  ]
+                                      },
+                      "experiment":  {
+                                         "in":  [
+
+                                                ],
+                                         "out":  [
+                                                     8
+                                                 ]
+                                     },
+                      "direct_text":  {
+                                          "in":  [
+
+                                                 ],
+                                          "out":  [
+                                                      36
+                                                  ]
+                                      },
+                      "batch_runner":  {
+                                           "in":  [
+
+                                                  ],
+                                           "out":  [
+                                                       31
+                                                   ]
+                                       },
+                      "validation":  {
+                                         "out":  [
+                                                     46
+                                                 ],
+                                         "in":  [
+
+                                                ]
+                                     },
+                      "new files":  {
+                                        "in":  [
+
+                                               ],
+                                        "out":  [
+                                                    4
+                                                ]
+                                    },
+                      "e2e_test":  {
+                                       "out":  [
+                                                   24,
+                                                   40
+                                               ],
+                                       "in":  [
+                                                  23
+                                              ]
+                                   },
+                      "95 additions":  {
+                                           "in":  [
+
+                                                  ],
+                                           "out":  [
+                                                       0
+                                                   ]
+                                       },
+                      "emoji_codepoints":  {
+                                               "in":  [
+                                                          16
+                                                      ],
+                                               "out":  [
+
+                                                       ]
+                                           },
+                      "rollback":  {
+                                       "out":  [
+                                                   45
+                                               ],
+                                       "in":  [
+
+                                              ]
+                                   },
+                      "6 deletions":  {
+                                          "in":  [
+                                                     1
+                                                 ],
+                                          "out":  [
+
+                                                  ]
+                                      },
+                      "different_env":  {
+                                            "in":  [
+                                                       27
+                                                   ],
+                                            "out":  [
+
+                                                    ]
+                                        },
+                      "git_revert":  {
+                                         "out":  [
+
+                                                 ],
+                                         "in":  [
+                                                    45
+                                                ]
+                                     },
                       "diagnosis":  {
                                         "in":  [
 
@@ -444,7 +500,97 @@
                                         "out":  [
                                                     32
                                                 ]
-                                    }
+                                    },
+                      "file_path":  {
+                                        "in":  [
+
+                                               ],
+                                        "out":  [
+                                                    34,
+                                                    35
+                                                ]
+                                    },
+                      "the display shows mojibake but that\u0027s just the terminal encoding":  {
+                                                                                                    "in":  [
+
+                                                                                                           ],
+                                                                                                    "out":  [
+                                                                                                                20
+                                                                                                            ]
+                                                                                                },
+                      "batch_runner.py":  {
+                                              "out":  [
+
+                                                      ],
+                                              "in":  [
+                                                         39
+                                                     ]
+                                          },
+                      "user":  {
+                                   "out":  [
+                                               41
+                                           ],
+                                   "in":  [
+
+                                          ]
+                               },
+                      "user_validation":  {
+                                              "out":  [
+
+                                                      ],
+                                              "in":  [
+                                                         42
+                                                     ]
+                                          },
+                      "subprocess":  {
+                                         "in":  [
+                                                    26
+                                                ],
+                                         "out":  [
+                                                     27,
+                                                     30
+                                                 ]
+                                     },
+                      "current_env":  {
+                                          "in":  [
+                                                     29
+                                                 ],
+                                          "out":  [
+
+                                                  ]
+                                      },
+                      "actual_path_trace":  {
+                                                "in":  [
+                                                           32
+                                                       ],
+                                                "out":  [
+
+                                                        ]
+                                            },
+                      "protocol_mismatch":  {
+                                                "out":  [
+                                                            39
+                                                        ],
+                                                "in":  [
+
+                                                       ]
+                                            },
+                      "print_result":  {
+                                           "in":  [
+                                                      13
+                                                  ],
+                                           "out":  [
+                                                       14
+                                                   ]
+                                       },
+                      "encoding_error":  {
+                                             "out":  [
+                                                         38
+                                                     ],
+                                             "in":  [
+
+                                                    ]
+                                         }
                   },
     "validation_queue":  [
 
@@ -453,8 +599,8 @@
     "project_root":  "C:/Users/jpswi/personal projects/RE3-standalone",
     "sessions":  {
                      "32863415-3fb0-4894-af4e-df1822be358d":  {
-                                                                  "last_turn":  11,
-                                                                  "last_active":  "2026-01-22T17:50:33.9723985-08:00",
+                                                                  "last_turn":  12,
+                                                                  "last_active":  "2026-01-22T17:50:49.4035416-08:00",
                                                                   "last_dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone"
                                                               },
                      "94922ce9-159d-486f-b0b5-7597154aacbf":  {
@@ -464,10 +610,10 @@
                                                               }
                  },
     "metadata":  {
-                     "last_turn":  11,
+                     "last_turn":  12,
                      "cycles_found":  1,
-                     "total_connected":  19,
-                     "total_orphans":  17
+                     "total_connected":  21,
+                     "total_orphans":  25
                  },
     "edges":  [
                   {
@@ -838,6 +984,106 @@
                       "sub":  "direct_text",
                       "obj":  "temp_files",
                       "pred":  "is",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  12,
+                      "timestamp":  "2026-01-22T17:50:49.4035416-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "syntax_error",
+                      "obj":  "distributed_runner.py",
+                      "pred":  "fixed_in",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  12,
+                      "timestamp":  "2026-01-22T17:50:49.4035416-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "encoding_error",
+                      "obj":  "safe-model-load.sh",
+                      "pred":  "fixed_in",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  12,
+                      "timestamp":  "2026-01-22T17:50:49.4035416-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "protocol_mismatch",
+                      "obj":  "batch_runner.py",
+                      "pred":  "fixed_in",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  12,
+                      "timestamp":  "2026-01-22T17:50:49.4035416-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "e2e_test",
+                      "obj":  "all_fixes",
+                      "pred":  "validates",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  12,
+                      "timestamp":  "2026-01-22T17:50:49.4035416-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "user",
+                      "obj":  "re3_run",
+                      "pred":  "can_execute",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  12,
+                      "timestamp":  "2026-01-22T17:50:49.4035416-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "session",
+                      "obj":  "user_validation",
+                      "pred":  "requires",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  12,
+                      "timestamp":  "2026-01-22T17:50:49.4035416-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "changes",
+                      "obj":  "auto_commit",
+                      "pred":  "persisted_via",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  12,
+                      "timestamp":  "2026-01-22T17:50:49.4035416-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "changes",
+                      "obj":  "minimal_risk",
+                      "pred":  "carry",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  12,
+                      "timestamp":  "2026-01-22T17:50:49.4035416-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "rollback",
+                      "obj":  "git_revert",
+                      "pred":  "requires",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  12,
+                      "timestamp":  "2026-01-22T17:50:49.4035416-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "validation",
+                      "obj":  "user_execution",
+                      "pred":  "depends_on",
                       "session":  "32863415-3fb0-4894-af4e-df1822be358d"
                   }
               ]
