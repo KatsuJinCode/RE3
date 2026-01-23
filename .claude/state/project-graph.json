@@ -1,5 +1,13 @@
 ﻿{
     "adjacency":  {
+                      "component_test":  {
+                                             "out":  [
+                                                         23
+                                                     ],
+                                             "in":  [
+                                                        22
+                                                    ]
+                                         },
                       "6 additions":  {
                                           "in":  [
 
@@ -9,28 +17,36 @@
                                                   ]
                                       },
                       "all_unicode":  {
-                                          "out":  [
-
-                                                  ],
                                           "in":  [
                                                      19
-                                                 ]
-                                      },
-                      "gemma_model":  {
+                                                 ],
                                           "out":  [
 
-                                                  ],
+                                                  ]
+                                      },
+                      "gemma_model":  {
                                           "in":  [
                                                      15
-                                                 ]
+                                                 ],
+                                          "out":  [
+
+                                                  ]
                                       },
+                      "shell_true_subprocess":  {
+                                                    "out":  [
+
+                                                            ],
+                                                    "in":  [
+                                                               31
+                                                           ]
+                                                },
                       "subprocess_exit_1":  {
-                                                "out":  [
-                                                            11
-                                                        ],
                                                 "in":  [
                                                            10
-                                                       ]
+                                                       ],
+                                                "out":  [
+                                                            11
+                                                        ]
                                             },
                       "not modifications to existing":  {
                                                             "in":  [
@@ -41,13 +57,21 @@
                                                                     ]
                                                         },
                       "PYTHONIOENCODING":  {
-                                               "out":  [
-                                                           18
-                                                       ],
                                                "in":  [
 
-                                                      ]
+                                                      ],
+                                               "out":  [
+                                                           18
+                                                       ]
                                            },
+                      "current_env":  {
+                                          "out":  [
+
+                                                  ],
+                                          "in":  [
+                                                     29
+                                                 ]
+                                      },
                       "15 deletions":  {
                                            "in":  [
                                                       0
@@ -65,12 +89,12 @@
                                                      ]
                                          },
                       "windows_python":  {
-                                             "out":  [
-                                                         17
-                                                     ],
                                              "in":  [
 
-                                                    ]
+                                                    ],
+                                             "out":  [
+                                                         17
+                                                     ]
                                          },
                       "progress.json":  {
                                             "in":  [
@@ -81,14 +105,30 @@
 
                                                     ]
                                         },
+                      "failure":  {
+                                      "out":  [
+
+                                              ],
+                                      "in":  [
+                                                 21
+                                             ]
+                                  },
                       "all_instant_errors":  {
-                                                 "out":  [
-                                                             10
-                                                         ],
                                                  "in":  [
                                                             9
-                                                        ]
+                                                        ],
+                                                 "out":  [
+                                                             10
+                                                         ]
                                              },
+                      "direct_bash":  {
+                                          "out":  [
+                                                      29
+                                                  ],
+                                          "in":  [
+                                                     28
+                                                 ]
+                                      },
                       "95 additions":  {
                                            "in":  [
 
@@ -97,14 +137,38 @@
                                                        0
                                                    ]
                                        },
-                      "emoji_chars":  {
+                      "direct_text":  {
                                           "out":  [
-                                                      15
+                                                      36
                                                   ],
                                           "in":  [
-                                                     14
+
                                                  ]
                                       },
+                      "my_test":  {
+                                      "out":  [
+                                                  28
+                                              ],
+                                      "in":  [
+
+                                             ]
+                                  },
+                      "emoji_chars":  {
+                                          "in":  [
+                                                     14
+                                                 ],
+                                          "out":  [
+                                                      15
+                                                  ]
+                                      },
+                      "fix":  {
+                                  "out":  [
+                                              22
+                                          ],
+                                  "in":  [
+
+                                         ]
+                              },
                       "0 deletions":  {
                                           "in":  [
                                                      2
@@ -114,12 +178,12 @@
                                                   ]
                                       },
                       "cp1252":  {
-                                     "out":  [
-                                                 16
-                                             ],
                                      "in":  [
                                                 17
-                                            ]
+                                            ],
+                                     "out":  [
+                                                 16
+                                             ]
                                  },
                       "data/runs/":  {
                                          "in":  [
@@ -130,37 +194,70 @@
                                                  ]
                                      },
                       "experiment":  {
-                                         "out":  [
-                                                     8
-                                                 ],
                                          "in":  [
 
-                                                ]
+                                                ],
+                                         "out":  [
+                                                     8
+                                                 ]
                                      },
                       "python_exception":  {
-                                               "out":  [
-                                                           12
-                                                       ],
                                                "in":  [
                                                           11
-                                                      ]
+                                                      ],
+                                               "out":  [
+                                                           12
+                                                       ]
                                            },
+                      "env_var":  {
+                                      "out":  [
+
+                                              ],
+                                      "in":  [
+                                                 30
+                                             ]
+                                  },
+                      "sanity_check":  {
+                                           "out":  [
+                                                       21
+                                                   ],
+                                           "in":  [
+
+                                                  ]
+                                       },
+                      "BatchRunner":  {
+                                          "out":  [
+                                                      26
+                                                  ],
+                                          "in":  [
+                                                     25
+                                                 ]
+                                      },
                       "sanity_check_failure":  {
-                                                   "out":  [
-                                                               9
-                                                           ],
                                                    "in":  [
                                                               8
-                                                          ]
+                                                          ],
+                                                   "out":  [
+                                                               9
+                                                           ]
                                                },
                       "not the script":  {
-                                             "out":  [
-
-                                                     ],
                                              "in":  [
                                                         20
-                                                    ]
+                                                    ],
+                                             "out":  [
+
+                                                     ]
                                          },
+                      "subprocess":  {
+                                         "out":  [
+                                                     27,
+                                                     30
+                                                 ],
+                                         "in":  [
+                                                    26
+                                                ]
+                                     },
                       "new files":  {
                                         "in":  [
 
@@ -169,13 +266,21 @@
                                                     4
                                                 ]
                                     },
+                      "actual_path_trace":  {
+                                                "out":  [
+
+                                                        ],
+                                                "in":  [
+                                                           32
+                                                       ]
+                                            },
                       "the display shows mojibake but that\u0027s just the terminal encoding":  {
-                                                                                                    "out":  [
-                                                                                                                20
-                                                                                                            ],
                                                                                                     "in":  [
 
-                                                                                                           ]
+                                                                                                           ],
+                                                                                                    "out":  [
+                                                                                                                20
+                                                                                                            ]
                                                                                                 },
                       "1 addition":  {
                                          "in":  [
@@ -185,6 +290,32 @@
                                                      2
                                                  ]
                                      },
+                      "temp_files":  {
+                                         "out":  [
+
+                                                 ],
+                                         "in":  [
+                                                    34,
+                                                    35,
+                                                    36
+                                                ]
+                                     },
+                      "different_env":  {
+                                            "out":  [
+
+                                                    ],
+                                            "in":  [
+                                                       27
+                                                   ]
+                                        },
+                      "e2e_test":  {
+                                       "out":  [
+                                                   24
+                                               ],
+                                       "in":  [
+                                                  23
+                                              ]
+                                   },
                       "6 deletions":  {
                                           "in":  [
                                                      1
@@ -193,14 +324,39 @@
 
                                                   ]
                                       },
+                      "full_harness":  {
+                                           "out":  [
+                                                       25
+                                                   ],
+                                           "in":  [
+                                                      24
+                                                  ]
+                                       },
+                      "file_path":  {
+                                        "out":  [
+                                                    34,
+                                                    35
+                                                ],
+                                        "in":  [
+
+                                               ]
+                                    },
                       "utf8":  {
-                                   "out":  [
-                                               19
-                                           ],
                                    "in":  [
 
-                                          ]
+                                          ],
+                                   "out":  [
+                                               19
+                                           ]
                                },
+                      "just incorrect":  {
+                                             "out":  [
+
+                                                     ],
+                                             "in":  [
+                                                        33
+                                                    ]
+                                         },
                       "no harness code":  {
                                               "in":  [
                                                          6
@@ -210,20 +366,28 @@
                                                       ]
                                           },
                       "print_result":  {
-                                           "out":  [
-                                                       14
-                                                   ],
                                            "in":  [
                                                       13
+                                                  ],
+                                           "out":  [
+                                                       14
+                                                   ]
+                                       },
+                      "batch_runner":  {
+                                           "out":  [
+                                                       31
+                                                   ],
+                                           "in":  [
+
                                                   ]
                                        },
                       "UnicodeEncodeError":  {
-                                                 "out":  [
-                                                             13
-                                                         ],
                                                  "in":  [
                                                             12
-                                                        ]
+                                                        ],
+                                                 "out":  [
+                                                             13
+                                                         ]
                                              },
                       "2":  {
                                 "in":  [
@@ -242,13 +406,21 @@
                                                         ]
                                             },
                       "emoji_codepoints":  {
-                                               "out":  [
-
-                                                       ],
                                                "in":  [
                                                           16
-                                                      ]
+                                                      ],
+                                               "out":  [
+
+                                                       ]
                                            },
+                      "not an error":  {
+                                           "out":  [
+                                                       33
+                                                   ],
+                                           "in":  [
+
+                                                  ]
+                                       },
                       "6":  {
                                 "in":  [
                                            7
@@ -258,13 +430,21 @@
                                         ]
                             },
                       "default_encoding":  {
-                                               "out":  [
-
-                                                       ],
                                                "in":  [
                                                           18
-                                                      ]
-                                           }
+                                                      ],
+                                               "out":  [
+
+                                                       ]
+                                           },
+                      "diagnosis":  {
+                                        "out":  [
+                                                    32
+                                                ],
+                                        "in":  [
+
+                                               ]
+                                    }
                   },
     "validation_queue":  [
 
@@ -273,8 +453,8 @@
     "project_root":  "C:/Users/jpswi/personal projects/RE3-standalone",
     "sessions":  {
                      "32863415-3fb0-4894-af4e-df1822be358d":  {
-                                                                  "last_turn":  8,
-                                                                  "last_active":  "2026-01-22T17:38:30.8177142-08:00",
+                                                                  "last_turn":  9,
+                                                                  "last_active":  "2026-01-22T17:44:35.7716920-08:00",
                                                                   "last_dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone"
                                                               },
                      "94922ce9-159d-486f-b0b5-7597154aacbf":  {
@@ -284,10 +464,10 @@
                                                               }
                  },
     "metadata":  {
-                     "last_turn":  8,
+                     "last_turn":  9,
                      "cycles_found":  1,
-                     "total_connected":  10,
-                     "total_orphans":  10
+                     "total_connected":  19,
+                     "total_orphans":  17
                  },
     "edges":  [
                   {
@@ -497,6 +677,166 @@
                       "type":  "double",
                       "sub":  "the display shows mojibake but that\u0027s just the terminal encoding",
                       "obj":  "not the script",
+                      "pred":  "is",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  9,
+                      "timestamp":  "2026-01-22T17:44:35.7716920-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "sanity_check",
+                      "obj":  "failure",
+                      "pred":  "still_triggers",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  9,
+                      "timestamp":  "2026-01-22T17:44:35.7716920-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "fix",
+                      "obj":  "component_test",
+                      "pred":  "was",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  9,
+                      "timestamp":  "2026-01-22T17:44:35.7716920-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "component_test",
+                      "obj":  "e2e_test",
+                      "pred":  "differs_from",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  9,
+                      "timestamp":  "2026-01-22T17:44:35.7716920-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "e2e_test",
+                      "obj":  "full_harness",
+                      "pred":  "exercises",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  9,
+                      "timestamp":  "2026-01-22T17:44:35.7716920-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "full_harness",
+                      "obj":  "BatchRunner",
+                      "pred":  "uses",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  9,
+                      "timestamp":  "2026-01-22T17:44:35.7716920-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "BatchRunner",
+                      "obj":  "subprocess",
+                      "pred":  "invokes",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  9,
+                      "timestamp":  "2026-01-22T17:44:35.7716920-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "subprocess",
+                      "obj":  "different_env",
+                      "pred":  "may_have",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  9,
+                      "timestamp":  "2026-01-22T17:44:35.7716920-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "my_test",
+                      "obj":  "direct_bash",
+                      "pred":  "ran",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  9,
+                      "timestamp":  "2026-01-22T17:44:35.7716920-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "direct_bash",
+                      "obj":  "current_env",
+                      "pred":  "inherits",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  9,
+                      "timestamp":  "2026-01-22T17:44:35.7716920-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "subprocess",
+                      "obj":  "env_var",
+                      "pred":  "may_not_inherit",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  9,
+                      "timestamp":  "2026-01-22T17:44:35.7716920-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "batch_runner",
+                      "obj":  "shell_true_subprocess",
+                      "pred":  "uses",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  9,
+                      "timestamp":  "2026-01-22T17:44:35.7716920-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "diagnosis",
+                      "obj":  "actual_path_trace",
+                      "pred":  "requires",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  9,
+                      "timestamp":  "2026-01-22T17:44:35.7716920-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "double",
+                      "sub":  "not an error",
+                      "obj":  "just incorrect",
+                      "pred":  "is",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  9,
+                      "timestamp":  "2026-01-22T17:44:35.7716920-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "double",
+                      "sub":  "file_path",
+                      "obj":  "temp_files",
+                      "pred":  "is",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  9,
+                      "timestamp":  "2026-01-22T17:44:35.7716920-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "double",
+                      "sub":  "file_path",
+                      "obj":  "temp_files",
+                      "pred":  "is",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  9,
+                      "timestamp":  "2026-01-22T17:44:35.7716920-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "double",
+                      "sub":  "direct_text",
+                      "obj":  "temp_files",
                       "pred":  "is",
                       "session":  "32863415-3fb0-4894-af4e-df1822be358d"
                   }
