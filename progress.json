@@ -1435,13 +1435,19 @@
       "config_id": "C05",
       "strategy": "b3a_lowercase_all",
       "benchmark": "gsm8k",
-      "status": "running",
+      "status": "completed",
       "claimed_by": "jpswi@Jace",
       "claimed_at": "2026-01-23T03:11:04.685406+00:00",
       "started_at": "2026-01-23T03:11:04.701417+00:00",
-      "completed_at": null,
-      "results_file": null,
-      "stats": null,
+      "completed_at": "2026-01-23T03:15:56.553701+00:00",
+      "results_file": "data\\runs\\phase1_20260122_191108.jsonl",
+      "stats": {
+        "total": 50,
+        "correct": 43,
+        "errors": 0,
+        "accuracy": 0.86,
+        "mean_latency_ms": 22571
+      },
       "error": null
     },
     "C05_b3a_lowercase_all_mmlu": {
@@ -5605,12 +5611,12 @@
   },
   "workers": {
     "jpswi@Jace": {
-      "last_seen": "2026-01-23T03:11:04.701417+00:00"
+      "last_seen": "2026-01-23T03:15:56.553701+00:00"
     },
     "Paul@DESKTOP-5FT8NGT": {
       "last_seen": "2026-01-19T03:54:56.739168+00:00"
     }
   },
   "created_at": "2026-01-18T19:08:04.152462+00:00",
-  "last_updated": "2026-01-23T03:11:04.701417+00:00"
+  "last_updated": "2026-01-23T03:15:56.553701+00:00"
 }
