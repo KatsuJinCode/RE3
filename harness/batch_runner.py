@@ -117,16 +117,26 @@ with open(r"{response_file}", "w", encoding="utf-8") as f:
     f.write(result)
 '''
             def run_in_background():
-                try:
-                    subprocess.run(
-                        [sys.executable, '-c', python_code],
-                        capture_output=True,
-                        text=True,
-                        timeout=self.timeout,
-                        env={**os.environ, 'PYTHONIOENCODING': 'utf-8'}
-                    )
-                except Exception:
-                    pass  # Timeout or error - response file stays empty
+                max_retries = 3
+                for attempt in range(max_retries):
+                    try:
+                        result = subprocess.run(
+                            [sys.executable, '-c', python_code],
+                            capture_output=True,
+                            text=True,
+                            timeout=self.timeout,
+                            env={**os.environ, 'PYTHONIOENCODING': 'utf-8'}
+                        )
+                        # Check if response file was written (success)
+                        if os.path.exists(response_file) and os.path.getsize(response_file) > 0:
+                            return  # Success
+                        # If subprocess succeeded but no output, retry
+                        if attempt < max_retries - 1:
+                            time.sleep(2)
+                    except Exception:
+                        if attempt < max_retries - 1:
+                            time.sleep(2)
+                        # Last attempt failed - response file stays empty
 
             thread = threading.Thread(target=run_in_background, daemon=True)
             thread.start()
