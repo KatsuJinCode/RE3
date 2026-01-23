@@ -178,9 +178,7 @@ def create_pr_via_fork(message: str) -> bool:
              '--repo', upstream_repo,
              '--head', f"{username}:{branch_name}",
              '--title', message,
-             '--body', f"Automated contribution from {username}
-
-Run results from RE3 distributed testing."],
+             '--body', f"Automated contribution from {username}\n\nRun results from RE3 distributed testing."],
             capture_output=True, text=True, timeout=30
         )
 
