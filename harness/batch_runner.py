@@ -102,33 +102,22 @@ class BatchRunner:
                 temp_files.append(prompt_file)
             prompt_file_unix = prompt_file.replace('\\', '/')
 
-            # Build command
-            cmd_parts = [
-                'bash',
-                f'"{GATEWAY_SCRIPT_PATH}"',
-                'request',
-                'text',
-                '--prompt-file', f'"{prompt_file_unix}"',
-                '--temperature', str(self.temperature)
-            ]
-
-            if system_prompt:
-                with tempfile.NamedTemporaryFile(mode='w', suffix='.txt', delete=False, encoding='utf-8') as f:
-                    f.write(system_prompt)
-                    system_file = f.name
-                    temp_files.append(system_file)
-                system_file_unix = system_file.replace('\\', '/')
-                cmd_parts.extend(['--system-file', f'"{system_file_unix}"'])
-
-            cmd = ' '.join(cmd_parts)
-
-            # Execute gateway script (returns immediately with FILE= path)
+            # Call Python gateway directly (bypasses bash which has path issues on Windows)
+            python_code = f'''
+import sys
+sys.stdout.reconfigure(encoding='utf-8')
+from safe_loading_gateway import get_gateway
+with open(r"{prompt_file}", "r", encoding="utf-8") as f:
+    prompt = f.read()
+result = get_gateway().request_text(prompt)
+print(result)
+'''
             result = subprocess.run(
-                cmd,
-                shell=True,
+                [sys.executable, '-c', python_code],
                 capture_output=True,
                 text=True,
-                timeout=30
+                timeout=self.timeout,
+                env={**os.environ, 'PYTHONIOENCODING': 'utf-8'}
             )
 
             if result.returncode != 0:
