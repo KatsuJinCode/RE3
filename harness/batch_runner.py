@@ -140,7 +140,7 @@ class BatchRunner:
                         pass
                 return None
 
-            # Parse FILE= from output
+            # Parse FILE= from output (async protocol)
             file_path = None
             for line in result.stdout.strip().split('\n'):
                 if line.startswith("FILE="):
@@ -148,12 +148,22 @@ class BatchRunner:
                     break
 
             if not file_path:
-                for tf in temp_files:
-                    try:
-                        os.unlink(tf)
-                    except:
-                        pass
-                return None
+                # Gateway returned direct response (sync protocol)
+                # Write response to temp file for compatibility
+                response_text = result.stdout.strip()
+                if response_text:
+                    with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False, encoding='utf-8') as f:
+                        f.write(response_text)
+                        file_path = f.name
+                        temp_files.append(file_path)
+                else:
+                    # Truly empty response - fail
+                    for tf in temp_files:
+                        try:
+                            os.unlink(tf)
+                        except:
+                            pass
+                    return None
 
             # Convert Unix-style path to Windows-style
             if platform.system() == "Windows" and file_path.startswith('/'):
