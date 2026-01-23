@@ -6,6 +6,7 @@ upfront and polls for responses, keeping the LLM continuously busy.
 """
 
 import subprocess
+import sys
 import time
 import json
 import os
