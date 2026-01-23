@@ -4061,13 +4061,19 @@
       "config_id": "C11",
       "strategy": "b4a_delimiter_swap",
       "benchmark": "gsm8k",
-      "status": "running",
+      "status": "completed",
       "claimed_by": "jpswi@Jace",
       "claimed_at": "2026-01-23T02:55:27.416918+00:00",
       "started_at": "2026-01-23T02:55:27.427042+00:00",
-      "completed_at": null,
-      "results_file": null,
-      "stats": null,
+      "completed_at": "2026-01-23T03:01:17.633815+00:00",
+      "results_file": "data\\runs\\phase1_20260122_185533.jsonl",
+      "stats": {
+        "total": 50,
+        "correct": 43,
+        "errors": 0,
+        "accuracy": 0.86,
+        "mean_latency_ms": 26887
+      },
       "error": null
     },
     "C11_b4a_delimiter_swap_mmlu": {
@@ -5587,12 +5593,12 @@
   },
   "workers": {
     "jpswi@Jace": {
-      "last_seen": "2026-01-23T02:55:27.427042+00:00"
+      "last_seen": "2026-01-23T03:01:17.633815+00:00"
     },
     "Paul@DESKTOP-5FT8NGT": {
       "last_seen": "2026-01-19T03:54:56.739168+00:00"
     }
   },
   "created_at": "2026-01-18T19:08:04.152462+00:00",
-  "last_updated": "2026-01-23T02:55:27.427042+00:00"
+  "last_updated": "2026-01-23T03:01:17.633815+00:00"
 }
