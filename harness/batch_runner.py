@@ -90,9 +90,7 @@ class BatchRunner:
         self._lock = threading.Lock()
 
     def _submit_request(self, prompt: str, system_prompt: Optional[str] = None) -> Optional[str]:
-        """Submit a single request to the gateway. Returns response file path or None."""
-        prompt_file = None
-        system_file = None
+        """Submit a single request to the gateway. Returns response file path or None (non-blocking)."""
         temp_files = []
 
         try:
@@ -101,9 +99,13 @@ class BatchRunner:
                 f.write(prompt)
                 prompt_file = f.name
                 temp_files.append(prompt_file)
-            prompt_file_unix = prompt_file.replace('\\', '/')
 
-            # Call Python gateway directly (bypasses bash which has path issues on Windows)
+            # Create response file (empty, will be written by subprocess)
+            with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False, encoding='utf-8') as f:
+                response_file = f.name
+                temp_files.append(response_file)
+
+            # Call Python gateway in background thread (non-blocking)
             python_code = f'''
 import sys
 sys.stdout.reconfigure(encoding='utf-8')
@@ -111,56 +113,25 @@ from safe_loading_gateway import get_gateway
 with open(r"{prompt_file}", "r", encoding="utf-8") as f:
     prompt = f.read()
 result = get_gateway().request_text(prompt)
-print(result)
+with open(r"{response_file}", "w", encoding="utf-8") as f:
+    f.write(result)
 '''
-            result = subprocess.run(
-                [sys.executable, '-c', python_code],
-                capture_output=True,
-                text=True,
-                timeout=self.timeout,
-                env={**os.environ, 'PYTHONIOENCODING': 'utf-8'}
-            )
+            def run_in_background():
+                try:
+                    subprocess.run(
+                        [sys.executable, '-c', python_code],
+                        capture_output=True,
+                        text=True,
+                        timeout=self.timeout,
+                        env={**os.environ, 'PYTHONIOENCODING': 'utf-8'}
+                    )
+                except Exception:
+                    pass  # Timeout or error - response file stays empty
 
-            if result.returncode != 0:
-                # Clean up temp files on error
-                for tf in temp_files:
-                    try:
-                        os.unlink(tf)
-                    except:
-                        pass
-                return None
+            thread = threading.Thread(target=run_in_background, daemon=True)
+            thread.start()
 
-            # Parse FILE= from output (async protocol)
-            file_path = None
-            for line in result.stdout.strip().split('\n'):
-                if line.startswith("FILE="):
-                    file_path = line[5:]
-                    break
-
-            if not file_path:
-                # Gateway returned direct response (sync protocol)
-                # Write response to temp file for compatibility
-                response_text = result.stdout.strip()
-                if response_text:
-                    with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False, encoding='utf-8') as f:
-                        f.write(response_text)
-                        file_path = f.name
-                        temp_files.append(file_path)
-                else:
-                    # Truly empty response - fail
-                    for tf in temp_files:
-                        try:
-                            os.unlink(tf)
-                        except:
-                            pass
-                    return None
-
-            # Convert Unix-style path to Windows-style
-            if platform.system() == "Windows" and file_path.startswith('/'):
-                if len(file_path) >= 3 and file_path[2] == '/':
-                    file_path = file_path[1].upper() + ':' + file_path[2:]
-
-            return file_path, temp_files
+            return response_file, temp_files
 
         except Exception as e:
             for tf in temp_files:
