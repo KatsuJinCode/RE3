@@ -1,29 +1,53 @@
 ﻿{
     "adjacency":  {
-                      "data/runs/*.jsonl":  {
-                                                "in":  [
+                      "6 additions":  {
+                                          "in":  [
 
-                                                       ],
+                                                 ],
+                                          "out":  [
+                                                      1
+                                                  ]
+                                      },
+                      "all_unicode":  {
+                                          "out":  [
+
+                                                  ],
+                                          "in":  [
+                                                     19
+                                                 ]
+                                      },
+                      "gemma_model":  {
+                                          "out":  [
+
+                                                  ],
+                                          "in":  [
+                                                     15
+                                                 ]
+                                      },
+                      "subprocess_exit_1":  {
                                                 "out":  [
-                                                            3
-                                                        ]
+                                                            11
+                                                        ],
+                                                "in":  [
+                                                           10
+                                                       ]
                                             },
-                      "new files":  {
-                                        "in":  [
+                      "not modifications to existing":  {
+                                                            "in":  [
+                                                                       4
+                                                                   ],
+                                                            "out":  [
 
-                                               ],
-                                        "out":  [
-                                                    4
-                                                ]
-                                    },
-                      "2":  {
-                                "in":  [
+                                                                    ]
+                                                        },
+                      "PYTHONIOENCODING":  {
+                                               "out":  [
+                                                           18
+                                                       ],
+                                               "in":  [
 
-                                       ],
-                                "out":  [
-                                            7
-                                        ]
-                            },
+                                                      ]
+                                           },
                       "15 deletions":  {
                                            "in":  [
                                                       0
@@ -32,6 +56,127 @@
 
                                                    ]
                                        },
+                      "all data files":  {
+                                             "in":  [
+
+                                                    ],
+                                             "out":  [
+                                                         6
+                                                     ]
+                                         },
+                      "windows_python":  {
+                                             "out":  [
+                                                         17
+                                                     ],
+                                             "in":  [
+
+                                                    ]
+                                         },
+                      "progress.json":  {
+                                            "in":  [
+                                                       3,
+                                                       5
+                                                   ],
+                                            "out":  [
+
+                                                    ]
+                                        },
+                      "all_instant_errors":  {
+                                                 "out":  [
+                                                             10
+                                                         ],
+                                                 "in":  [
+                                                            9
+                                                        ]
+                                             },
+                      "95 additions":  {
+                                           "in":  [
+
+                                                  ],
+                                           "out":  [
+                                                       0
+                                                   ]
+                                       },
+                      "emoji_chars":  {
+                                          "out":  [
+                                                      15
+                                                  ],
+                                          "in":  [
+                                                     14
+                                                 ]
+                                      },
+                      "0 deletions":  {
+                                          "in":  [
+                                                     2
+                                                 ],
+                                          "out":  [
+
+                                                  ]
+                                      },
+                      "cp1252":  {
+                                     "out":  [
+                                                 16
+                                             ],
+                                     "in":  [
+                                                17
+                                            ]
+                                 },
+                      "data/runs/":  {
+                                         "in":  [
+
+                                                ],
+                                         "out":  [
+                                                     5
+                                                 ]
+                                     },
+                      "experiment":  {
+                                         "out":  [
+                                                     8
+                                                 ],
+                                         "in":  [
+
+                                                ]
+                                     },
+                      "python_exception":  {
+                                               "out":  [
+                                                           12
+                                                       ],
+                                               "in":  [
+                                                          11
+                                                      ]
+                                           },
+                      "sanity_check_failure":  {
+                                                   "out":  [
+                                                               9
+                                                           ],
+                                                   "in":  [
+                                                              8
+                                                          ]
+                                               },
+                      "not the script":  {
+                                             "out":  [
+
+                                                     ],
+                                             "in":  [
+                                                        20
+                                                    ]
+                                         },
+                      "new files":  {
+                                        "in":  [
+
+                                               ],
+                                        "out":  [
+                                                    4
+                                                ]
+                                    },
+                      "the display shows mojibake but that\u0027s just the terminal encoding":  {
+                                                                                                    "out":  [
+                                                                                                                20
+                                                                                                            ],
+                                                                                                    "in":  [
+
+                                                                                                           ]
+                                                                                                },
                       "1 addition":  {
                                          "in":  [
 
@@ -48,63 +193,14 @@
 
                                                   ]
                                       },
-                      "95 additions":  {
-                                           "in":  [
+                      "utf8":  {
+                                   "out":  [
+                                               19
+                                           ],
+                                   "in":  [
 
-                                                  ],
-                                           "out":  [
-                                                       0
-                                                   ]
-                                       },
-                      "not modifications to existing":  {
-                                                            "in":  [
-                                                                       4
-                                                                   ],
-                                                            "out":  [
-
-                                                                    ]
-                                                        },
-                      "all data files":  {
-                                             "in":  [
-
-                                                    ],
-                                             "out":  [
-                                                         6
-                                                     ]
-                                         },
-                      "progress.json":  {
-                                            "in":  [
-                                                       3,
-                                                       5
-                                                   ],
-                                            "out":  [
-
-                                                    ]
-                                        },
-                      "data/runs/":  {
-                                         "in":  [
-
-                                                ],
-                                         "out":  [
-                                                     5
-                                                 ]
-                                     },
-                      "6":  {
-                                "in":  [
-                                           7
-                                       ],
-                                "out":  [
-
-                                        ]
-                            },
-                      "0 deletions":  {
-                                          "in":  [
-                                                     2
-                                                 ],
-                                          "out":  [
-
-                                                  ]
-                                      },
+                                          ]
+                               },
                       "no harness code":  {
                                               "in":  [
                                                          6
@@ -113,14 +209,62 @@
 
                                                       ]
                                           },
-                      "6 additions":  {
-                                          "in":  [
-
-                                                 ],
-                                          "out":  [
-                                                      1
+                      "print_result":  {
+                                           "out":  [
+                                                       14
+                                                   ],
+                                           "in":  [
+                                                      13
                                                   ]
-                                      }
+                                       },
+                      "UnicodeEncodeError":  {
+                                                 "out":  [
+                                                             13
+                                                         ],
+                                                 "in":  [
+                                                            12
+                                                        ]
+                                             },
+                      "2":  {
+                                "in":  [
+
+                                       ],
+                                "out":  [
+                                            7
+                                        ]
+                            },
+                      "data/runs/*.jsonl":  {
+                                                "in":  [
+
+                                                       ],
+                                                "out":  [
+                                                            3
+                                                        ]
+                                            },
+                      "emoji_codepoints":  {
+                                               "out":  [
+
+                                                       ],
+                                               "in":  [
+                                                          16
+                                                      ]
+                                           },
+                      "6":  {
+                                "in":  [
+                                           7
+                                       ],
+                                "out":  [
+
+                                        ]
+                            },
+                      "default_encoding":  {
+                                               "out":  [
+
+                                                       ],
+                                               "in":  [
+                                                          18
+                                                      ]
+                                           }
                   },
     "validation_queue":  [
 
@@ -129,8 +273,8 @@
     "project_root":  "C:/Users/jpswi/personal projects/RE3-standalone",
     "sessions":  {
                      "32863415-3fb0-4894-af4e-df1822be358d":  {
-                                                                  "last_turn":  7,
-                                                                  "last_active":  "2026-01-22T17:37:10.1638288-08:00",
+                                                                  "last_turn":  8,
+                                                                  "last_active":  "2026-01-22T17:38:30.8177142-08:00",
                                                                   "last_dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone"
                                                               },
                      "94922ce9-159d-486f-b0b5-7597154aacbf":  {
@@ -140,10 +284,10 @@
                                                               }
                  },
     "metadata":  {
-                     "last_turn":  7,
-                     "cycles_found":  0,
-                     "total_connected":  2,
-                     "total_orphans":  5
+                     "last_turn":  8,
+                     "cycles_found":  1,
+                     "total_connected":  10,
+                     "total_orphans":  10
                  },
     "edges":  [
                   {
@@ -225,6 +369,136 @@
                       "obj":  "6",
                       "pred":  "4",
                       "session":  "94922ce9-159d-486f-b0b5-7597154aacbf"
+                  },
+                  {
+                      "turn":  8,
+                      "timestamp":  "2026-01-22T17:38:30.8177142-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "experiment",
+                      "obj":  "sanity_check_failure",
+                      "pred":  "triggers",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  8,
+                      "timestamp":  "2026-01-22T17:38:30.8177142-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "sanity_check_failure",
+                      "obj":  "all_instant_errors",
+                      "pred":  "caused_by",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  8,
+                      "timestamp":  "2026-01-22T17:38:30.8177142-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "all_instant_errors",
+                      "obj":  "subprocess_exit_1",
+                      "pred":  "caused_by",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  8,
+                      "timestamp":  "2026-01-22T17:38:30.8177142-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "subprocess_exit_1",
+                      "obj":  "python_exception",
+                      "pred":  "caused_by",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  8,
+                      "timestamp":  "2026-01-22T17:38:30.8177142-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "python_exception",
+                      "obj":  "UnicodeEncodeError",
+                      "pred":  "is",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  8,
+                      "timestamp":  "2026-01-22T17:38:30.8177142-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "UnicodeEncodeError",
+                      "obj":  "print_result",
+                      "pred":  "raised_at",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  8,
+                      "timestamp":  "2026-01-22T17:38:30.8177142-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "print_result",
+                      "obj":  "emoji_chars",
+                      "pred":  "cannot_encode",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  8,
+                      "timestamp":  "2026-01-22T17:38:30.8177142-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "emoji_chars",
+                      "obj":  "gemma_model",
+                      "pred":  "returned_by",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  8,
+                      "timestamp":  "2026-01-22T17:38:30.8177142-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "cp1252",
+                      "obj":  "emoji_codepoints",
+                      "pred":  "lacks",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  8,
+                      "timestamp":  "2026-01-22T17:38:30.8177142-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "windows_python",
+                      "obj":  "cp1252",
+                      "pred":  "defaults_to",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  8,
+                      "timestamp":  "2026-01-22T17:38:30.8177142-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "PYTHONIOENCODING",
+                      "obj":  "default_encoding",
+                      "pred":  "overrides",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  8,
+                      "timestamp":  "2026-01-22T17:38:30.8177142-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "triple",
+                      "sub":  "utf8",
+                      "obj":  "all_unicode",
+                      "pred":  "supports",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
+                  },
+                  {
+                      "turn":  8,
+                      "timestamp":  "2026-01-22T17:38:30.8177142-08:00",
+                      "dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone",
+                      "type":  "double",
+                      "sub":  "the display shows mojibake but that\u0027s just the terminal encoding",
+                      "obj":  "not the script",
+                      "pred":  "is",
+                      "session":  "32863415-3fb0-4894-af4e-df1822be358d"
                   }
               ]
 }
