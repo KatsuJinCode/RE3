@@ -17,12 +17,12 @@
                                                 ]
                                     },
                       "2":  {
-                                "out":  [
-                                            7
-                                        ],
                                 "in":  [
 
-                                       ]
+                                       ],
+                                "out":  [
+                                            7
+                                        ]
                             },
                       "15 deletions":  {
                                            "in":  [
@@ -65,37 +65,37 @@
                                                                     ]
                                                         },
                       "all data files":  {
-                                             "out":  [
-                                                         6
-                                                     ],
                                              "in":  [
 
-                                                    ]
+                                                    ],
+                                             "out":  [
+                                                         6
+                                                     ]
                                          },
                       "progress.json":  {
-                                            "out":  [
-
-                                                    ],
                                             "in":  [
                                                        3,
                                                        5
-                                                   ]
+                                                   ],
+                                            "out":  [
+
+                                                    ]
                                         },
                       "data/runs/":  {
-                                         "out":  [
-                                                     5
-                                                 ],
                                          "in":  [
 
-                                                ]
+                                                ],
+                                         "out":  [
+                                                     5
+                                                 ]
                                      },
                       "6":  {
-                                "out":  [
-
-                                        ],
                                 "in":  [
                                            7
-                                       ]
+                                       ],
+                                "out":  [
+
+                                        ]
                             },
                       "0 deletions":  {
                                           "in":  [
@@ -106,12 +106,12 @@
                                                   ]
                                       },
                       "no harness code":  {
-                                              "out":  [
-
-                                                      ],
                                               "in":  [
                                                          6
-                                                     ]
+                                                     ],
+                                              "out":  [
+
+                                                      ]
                                           },
                       "6 additions":  {
                                           "in":  [
@@ -129,13 +129,13 @@
     "project_root":  "C:/Users/jpswi/personal projects/RE3-standalone",
     "sessions":  {
                      "94922ce9-159d-486f-b0b5-7597154aacbf":  {
-                                                                  "last_turn":  4,
-                                                                  "last_active":  "2026-01-18T20:26:37.6271053-08:00",
+                                                                  "last_turn":  5,
+                                                                  "last_active":  "2026-01-18T20:27:37.8153650-08:00",
                                                                   "last_dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone"
                                                               }
                  },
     "metadata":  {
-                     "last_turn":  4,
+                     "last_turn":  5,
                      "cycles_found":  0,
                      "total_connected":  2,
                      "total_orphans":  5
