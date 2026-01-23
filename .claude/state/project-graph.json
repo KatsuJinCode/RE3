@@ -1,12 +1,12 @@
 ﻿{
     "adjacency":  {
                       "component_test":  {
-                                             "out":  [
-                                                         23
-                                                     ],
                                              "in":  [
                                                         22
-                                                    ]
+                                                    ],
+                                             "out":  [
+                                                         23
+                                                     ]
                                          },
                       "6 additions":  {
                                           "in":  [
@@ -33,12 +33,12 @@
                                                   ]
                                       },
                       "shell_true_subprocess":  {
-                                                    "out":  [
-
-                                                            ],
                                                     "in":  [
                                                                31
-                                                           ]
+                                                           ],
+                                                    "out":  [
+
+                                                            ]
                                                 },
                       "subprocess_exit_1":  {
                                                 "in":  [
@@ -56,21 +56,21 @@
 
                                                                     ]
                                                         },
-                      "PYTHONIOENCODING":  {
-                                               "in":  [
+                      "direct_text":  {
+                                          "in":  [
 
-                                                      ],
-                                               "out":  [
-                                                           18
-                                                       ]
-                                           },
-                      "current_env":  {
+                                                 ],
                                           "out":  [
-
-                                                  ],
+                                                      36
+                                                  ]
+                                      },
+                      "current_env":  {
                                           "in":  [
                                                      29
-                                                 ]
+                                                 ],
+                                          "out":  [
+
+                                                  ]
                                       },
                       "15 deletions":  {
                                            "in":  [
@@ -96,6 +96,22 @@
                                                          17
                                                      ]
                                          },
+                      "no harness code":  {
+                                              "in":  [
+                                                         6
+                                                     ],
+                                              "out":  [
+
+                                                      ]
+                                          },
+                      "diagnosis":  {
+                                        "in":  [
+
+                                               ],
+                                        "out":  [
+                                                    32
+                                                ]
+                                    },
                       "progress.json":  {
                                             "in":  [
                                                        3,
@@ -106,12 +122,12 @@
                                                     ]
                                         },
                       "failure":  {
-                                      "out":  [
-
-                                              ],
                                       "in":  [
                                                  21
-                                             ]
+                                             ],
+                                      "out":  [
+
+                                              ]
                                   },
                       "all_instant_errors":  {
                                                  "in":  [
@@ -121,37 +137,21 @@
                                                              10
                                                          ]
                                              },
-                      "direct_bash":  {
-                                          "out":  [
-                                                      29
-                                                  ],
-                                          "in":  [
-                                                     28
-                                                 ]
-                                      },
-                      "95 additions":  {
-                                           "in":  [
+                      "2":  {
+                                "in":  [
 
-                                                  ],
-                                           "out":  [
-                                                       0
-                                                   ]
-                                       },
-                      "direct_text":  {
-                                          "out":  [
-                                                      36
-                                                  ],
-                                          "in":  [
-
-                                                 ]
-                                      },
+                                       ],
+                                "out":  [
+                                            7
+                                        ]
+                            },
                       "my_test":  {
-                                      "out":  [
-                                                  28
-                                              ],
                                       "in":  [
 
-                                             ]
+                                             ],
+                                      "out":  [
+                                                  28
+                                              ]
                                   },
                       "emoji_chars":  {
                                           "in":  [
@@ -162,12 +162,12 @@
                                                   ]
                                       },
                       "fix":  {
-                                  "out":  [
-                                              22
-                                          ],
                                   "in":  [
 
-                                         ]
+                                         ],
+                                  "out":  [
+                                              22
+                                          ]
                               },
                       "0 deletions":  {
                                           "in":  [
@@ -209,29 +209,37 @@
                                                            12
                                                        ]
                                            },
-                      "env_var":  {
-                                      "out":  [
+                      "PYTHONIOENCODING":  {
+                                               "in":  [
 
-                                              ],
+                                                      ],
+                                               "out":  [
+                                                           18
+                                                       ]
+                                           },
+                      "env_var":  {
                                       "in":  [
                                                  30
-                                             ]
+                                             ],
+                                      "out":  [
+
+                                              ]
                                   },
                       "sanity_check":  {
-                                           "out":  [
-                                                       21
-                                                   ],
                                            "in":  [
 
-                                                  ]
+                                                  ],
+                                           "out":  [
+                                                       21
+                                                   ]
                                        },
                       "BatchRunner":  {
-                                          "out":  [
-                                                      26
-                                                  ],
                                           "in":  [
                                                      25
-                                                 ]
+                                                 ],
+                                          "out":  [
+                                                      26
+                                                  ]
                                       },
                       "sanity_check_failure":  {
                                                    "in":  [
@@ -249,15 +257,15 @@
 
                                                      ]
                                          },
-                      "subprocess":  {
-                                         "out":  [
-                                                     27,
-                                                     30
-                                                 ],
-                                         "in":  [
-                                                    26
+                      "file_path":  {
+                                        "in":  [
+
+                                               ],
+                                        "out":  [
+                                                    34,
+                                                    35
                                                 ]
-                                     },
+                                    },
                       "new files":  {
                                         "in":  [
 
@@ -267,21 +275,22 @@
                                                 ]
                                     },
                       "actual_path_trace":  {
-                                                "out":  [
-
-                                                        ],
                                                 "in":  [
                                                            32
-                                                       ]
-                                            },
-                      "the display shows mojibake but that\u0027s just the terminal encoding":  {
-                                                                                                    "in":  [
+                                                       ],
+                                                "out":  [
 
-                                                                                                           ],
-                                                                                                    "out":  [
-                                                                                                                20
-                                                                                                            ]
-                                                                                                },
+                                                        ]
+                                            },
+                      "subprocess":  {
+                                         "in":  [
+                                                    26
+                                                ],
+                                         "out":  [
+                                                     27,
+                                                     30
+                                                 ]
+                                     },
                       "1 addition":  {
                                          "in":  [
 
@@ -290,31 +299,21 @@
                                                      2
                                                  ]
                                      },
-                      "temp_files":  {
-                                         "out":  [
-
-                                                 ],
-                                         "in":  [
-                                                    34,
-                                                    35,
-                                                    36
-                                                ]
-                                     },
                       "different_env":  {
-                                            "out":  [
-
-                                                    ],
                                             "in":  [
                                                        27
-                                                   ]
+                                                   ],
+                                            "out":  [
+
+                                                    ]
                                         },
                       "e2e_test":  {
-                                       "out":  [
-                                                   24
-                                               ],
                                        "in":  [
                                                   23
-                                              ]
+                                              ],
+                                       "out":  [
+                                                   24
+                                               ]
                                    },
                       "6 deletions":  {
                                           "in":  [
@@ -325,22 +324,13 @@
                                                   ]
                                       },
                       "full_harness":  {
-                                           "out":  [
-                                                       25
-                                                   ],
                                            "in":  [
                                                       24
-                                                  ]
+                                                  ],
+                                           "out":  [
+                                                       25
+                                                   ]
                                        },
-                      "file_path":  {
-                                        "out":  [
-                                                    34,
-                                                    35
-                                                ],
-                                        "in":  [
-
-                                               ]
-                                    },
                       "utf8":  {
                                    "in":  [
 
@@ -350,21 +340,21 @@
                                            ]
                                },
                       "just incorrect":  {
-                                             "out":  [
-
-                                                     ],
                                              "in":  [
                                                         33
-                                                    ]
-                                         },
-                      "no harness code":  {
-                                              "in":  [
-                                                         6
-                                                     ],
-                                              "out":  [
+                                                    ],
+                                             "out":  [
 
-                                                      ]
-                                          },
+                                                     ]
+                                         },
+                      "95 additions":  {
+                                           "in":  [
+
+                                                  ],
+                                           "out":  [
+                                                       0
+                                                   ]
+                                       },
                       "print_result":  {
                                            "in":  [
                                                       13
@@ -374,12 +364,12 @@
                                                    ]
                                        },
                       "batch_runner":  {
-                                           "out":  [
-                                                       31
-                                                   ],
                                            "in":  [
 
-                                                  ]
+                                                  ],
+                                           "out":  [
+                                                       31
+                                                   ]
                                        },
                       "UnicodeEncodeError":  {
                                                  "in":  [
@@ -389,14 +379,16 @@
                                                              13
                                                          ]
                                              },
-                      "2":  {
-                                "in":  [
+                      "temp_files":  {
+                                         "in":  [
+                                                    34,
+                                                    35,
+                                                    36
+                                                ],
+                                         "out":  [
 
-                                       ],
-                                "out":  [
-                                            7
-                                        ]
-                            },
+                                                 ]
+                                     },
                       "data/runs/*.jsonl":  {
                                                 "in":  [
 
@@ -413,13 +405,21 @@
 
                                                        ]
                                            },
+                      "the display shows mojibake but that\u0027s just the terminal encoding":  {
+                                                                                                    "in":  [
+
+                                                                                                           ],
+                                                                                                    "out":  [
+                                                                                                                20
+                                                                                                            ]
+                                                                                                },
                       "not an error":  {
-                                           "out":  [
-                                                       33
-                                                   ],
                                            "in":  [
 
-                                                  ]
+                                                  ],
+                                           "out":  [
+                                                       33
+                                                   ]
                                        },
                       "6":  {
                                 "in":  [
@@ -429,6 +429,14 @@
 
                                         ]
                             },
+                      "direct_bash":  {
+                                          "in":  [
+                                                     28
+                                                 ],
+                                          "out":  [
+                                                      29
+                                                  ]
+                                      },
                       "default_encoding":  {
                                                "in":  [
                                                           18
@@ -436,15 +444,7 @@
                                                "out":  [
 
                                                        ]
-                                           },
-                      "diagnosis":  {
-                                        "out":  [
-                                                    32
-                                                ],
-                                        "in":  [
-
-                                               ]
-                                    }
+                                           }
                   },
     "validation_queue":  [
 
@@ -453,8 +453,8 @@
     "project_root":  "C:/Users/jpswi/personal projects/RE3-standalone",
     "sessions":  {
                      "32863415-3fb0-4894-af4e-df1822be358d":  {
-                                                                  "last_turn":  9,
-                                                                  "last_active":  "2026-01-22T17:44:35.7716920-08:00",
+                                                                  "last_turn":  10,
+                                                                  "last_active":  "2026-01-22T17:50:26.8512338-08:00",
                                                                   "last_dir":  "C:\\Users\\jpswi\\personal projects\\RE3-standalone"
                                                               },
                      "94922ce9-159d-486f-b0b5-7597154aacbf":  {
@@ -464,7 +464,7 @@
                                                               }
                  },
     "metadata":  {
-                     "last_turn":  9,
+                     "last_turn":  10,
                      "cycles_found":  1,
                      "total_connected":  19,
                      "total_orphans":  17
